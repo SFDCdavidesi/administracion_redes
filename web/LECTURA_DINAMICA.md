@@ -63,12 +63,27 @@ Solo para desarrollo local con servidores específicos.
 
 ---
 
+## � Opción 4: Vercel Functions (MEJOR PARA PRODUCCIÓN EN VERCEL)
+
+Si tu app está en **Vercel**, usa **Vercel Functions** para lectura 100% dinámica sin regenerar `index.json`.
+
+Ver: [VERCEL_FUNCTIONS.md](../VERCEL_FUNCTIONS.md)
+
+✅ **Ventajas:**
+- ✨ Lectura dinámica en tiempo real en producción
+- 🚀 Se ejecuta en el servidor de Vercel
+- 💰 Gratuito (100k invocaciones/mes)
+- 🔄 Automático: agrega un JSON y aparece al instante
+
+---
+
 ## 🚀 Recomendación
 
 | Caso de Uso | Opción |
 |-----------|---------|
 | Desarrollo local con cambios frecuentes | **Opción 1** (servidor.py) |
-| Producción estática (GitHub Pages, Vercel) | **Opción 2** (rename_datasets.py) |
+| Producción Vercel con lectura dinámica | **Opción 4** (Vercel Functions) |
+| Producción estática sin serverless | **Opción 2** (rename_datasets.py) |
 | Solo pruebas rápidas | Opción 3 |
 
 ---
