@@ -14,9 +14,18 @@
       <p class="eyebrow">Preparacion de asignatura</p>
       <h1>🌐 Campus Test Studio</h1>
       <p class="subtitle">Carga uno o varios JSON generados desde PDF y repasa en modo dinamico desde movil u ordenador.</p>
-      <button id="mobileControlsToggle" class="btn small mobile-controls-toggle" type="button" aria-expanded="false">Mostrar controles</button>
 
-      <div class="toolbar">
+      <div class="quick-header">
+        <div class="server-datasets essentials">
+          <label for="serverDatasetSelect">JSON disponibles en carpeta datasets</label>
+          <select id="serverDatasetSelect"></select>
+          <button id="loadServerDatasetBtn" class="btn" type="button">Cargar JSON</button>
+          <button id="refreshServerDatasetsBtn" class="btn" type="button">Actualizar</button>
+        </div>
+        <button id="mobileControlsToggle" class="btn small mobile-controls-toggle" type="button" aria-expanded="false">🧰 Mas opciones</button>
+      </div>
+
+      <div class="toolbar advanced-controls">
         <label class="btn" for="loadProgressInput">Cargar progreso</label>
         <input id="loadProgressInput" type="file" accept="application/json">
         <button id="saveProgressBtn" class="btn" type="button">Exportar progreso JSON</button>
@@ -28,20 +37,13 @@
         <button id="shuffleBtn" class="btn" type="button">Mezclar preguntas: OFF</button>
       </div>
 
-      <div class="server-datasets">
-        <label for="serverDatasetSelect">JSON disponibles en carpeta datasets</label>
-        <select id="serverDatasetSelect"></select>
-        <button id="loadServerDatasetBtn" class="btn" type="button">Cargar JSON seleccionado</button>
-        <button id="refreshServerDatasetsBtn" class="btn" type="button">Actualizar lista</button>
-      </div>
-
-      <div class="server-datasets">
+      <div class="server-datasets advanced-controls">
         <label for="jsonFilesInput">JSON desde archivo externo</label>
         <input id="jsonFilesInput" type="file" accept="application/json,.json" multiple>
         <button id="loadExternalJsonBtn" class="btn" type="button">Seleccionar JSON externo</button>
       </div>
 
-      <div class="sim-controls">
+      <div class="sim-controls advanced-controls">
         <label>
           Minutos simulacro
           <input id="simMinutes" type="number" min="1" value="30">
@@ -59,7 +61,7 @@
         <span id="timerChip" class="timer-chip">Sin simulacro</span>
       </div>
 
-      <div class="dataset-row">
+      <div class="dataset-row advanced-controls">
         <strong>Bancos activos</strong>
         <div id="datasetTabs" class="dataset-tabs"></div>
       </div>

@@ -95,18 +95,10 @@ function updateMobileControlsState() {
   const hero = document.querySelector(".hero");
   if (!hero || !el.mobileControlsToggle) return;
 
-  const isMobile = mobileQuery.matches;
-  const shouldCollapse = isMobile && !state.mobileControlsExpanded;
-  hero.classList.toggle("mobile-collapsed", shouldCollapse);
-
-  if (!isMobile) {
-    el.mobileControlsToggle.setAttribute("aria-expanded", "true");
-    el.mobileControlsToggle.textContent = "Mostrar controles";
-    return;
-  }
-
+  const shouldCollapse = !state.mobileControlsExpanded;
+  hero.classList.toggle("compact-collapsed", shouldCollapse);
   el.mobileControlsToggle.setAttribute("aria-expanded", String(!shouldCollapse));
-  el.mobileControlsToggle.textContent = shouldCollapse ? "Mostrar controles" : "Ocultar controles";
+  el.mobileControlsToggle.textContent = shouldCollapse ? "🧰 Mas opciones" : "🧰 Menos opciones";
 }
 
 function updateNavigatorUi() {

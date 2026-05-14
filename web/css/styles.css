@@ -76,6 +76,19 @@ h1 {
   max-width: 68ch;
 }
 
+.quick-header {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: end;
+  flex-wrap: wrap;
+}
+
+.quick-header .server-datasets {
+  margin-top: 0;
+  flex: 1 1 520px;
+}
+
 .toolbar {
   margin-top: 14px;
   display: flex;
@@ -84,8 +97,10 @@ h1 {
 }
 
 .mobile-controls-toggle {
-  display: none;
-  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
 }
 
 .server-datasets {
@@ -215,6 +230,10 @@ input[type="file"] {
 .status {
   margin: 12px 0 0;
   color: var(--ink-soft);
+}
+
+.hero.compact-collapsed .advanced-controls {
+  display: none;
 }
 
 .metrics {
@@ -448,28 +467,16 @@ input[type="file"] {
     font-weight: 700;
   }
 
-  .mobile-controls-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  .quick-header {
+    align-items: stretch;
   }
 
-  .hero.mobile-collapsed {
-    padding: 10px 12px;
+  .quick-header .server-datasets {
+    flex-basis: 100%;
   }
 
-  .hero.mobile-collapsed .subtitle,
-  .hero.mobile-collapsed .toolbar,
-  .hero.mobile-collapsed .server-datasets,
-  .hero.mobile-collapsed .sim-controls,
-  .hero.mobile-collapsed .dataset-row,
-  .hero.mobile-collapsed .status {
-    display: none;
-  }
-
-  .hero.mobile-collapsed h1 {
-    margin: 4px 0;
-    font-size: 1.2rem;
+  .hero.compact-collapsed {
+    padding: 12px;
   }
 
   .metrics {
@@ -580,9 +587,11 @@ input[type="file"] {
 
   .sim-controls label,
   .sim-controls input,
+  .quick-header .server-datasets,
   .server-datasets select,
   .sim-controls .btn,
   .server-datasets .btn,
+  .mobile-controls-toggle,
   .timer-chip {
     width: 100%;
   }
