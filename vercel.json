@@ -1,21 +1,20 @@
 {
-  "buildCommand": "echo 'No build required'",
   "outputDirectory": "web",
-  "public": true,
-  "functions": {
-    "api/**/*.js": {
-      "memory": 128,
-      "maxDuration": 30,
-      "runtime": "nodejs18.x"
-    }
-  },
-  "redirects": [
-    {
-      "source": "/datasets/:path*",
-      "destination": "/web/datasets/:path*"
-    }
-  ],
+  "cleanUrls": true,
   "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    },
     {
       "source": "/api/:path*",
       "headers": [
@@ -26,10 +25,6 @@
         {
           "key": "Access-Control-Allow-Methods",
           "value": "GET, OPTIONS, POST"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "Content-Type"
         }
       ]
     }
