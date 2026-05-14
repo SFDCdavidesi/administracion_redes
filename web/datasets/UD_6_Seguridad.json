@@ -1,7 +1,7 @@
 {
   "sourcePdf": "C:\\Users\\david\\python\\redes\\web\\examenes\\UD_6_Seguridad.pdf",
   "exportedAt": "2026-05-14T18:45:10.000000+00:00",
-  "totalQuestions": 17,
+  "totalQuestions": 20,
   "items": [
     {
       "page": 1,
@@ -188,6 +188,39 @@
         { "text": "Evita accesos físicos no autorizados reduciendo superficie de ataque", "selected": true },
         { "text": "Aumenta velocidad de transmisión en todos los puertos activos", "selected": false },
         { "text": "Permite asignar más direcciones MAC a cada puerto disponible", "selected": false }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 18,
+      "question": "¿Cuál es la mejor estrategia global frente a amenazas descritas en la unidad?",
+      "answers": [
+        { "text": "Eliminar segmentación de red para simplificar administración", "selected": false },
+        { "text": "Combinar control acceso actualización sistemas y monitorización continua", "selected": true },
+        { "text": "Permitir acceso completo a todos los dispositivos de red", "selected": false },
+        { "text": "Usar únicamente antivirus sin otras medidas adicionales de seguridad", "selected": false }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 19,
+      "question": "¿Qué aporta SNMP en monitorización de eventos de seguridad en switches?",
+      "answers": [
+        { "text": "Permite eliminar registros de eventos en el sistema", "selected": false },
+        { "text": "Permite bloquear automáticamente todos los puertos del switch", "selected": false },
+        { "text": "Permite enviar alertas automáticas ante violaciones de seguridad detectadas", "selected": true },
+        { "text": "Permite asignar direcciones IP a dispositivos conectados", "selected": false }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 20,
+      "question": "¿Qué diferencia tiene el modo protect frente a restrict en Port Security?",
+      "answers": [
+        { "text": "Descarta tráfico no autorizado sin generar alertas ni registros de eventos", "selected": true },
+        { "text": "Permite tráfico no autorizado registrando todos los eventos ocurridos", "selected": false },
+        { "text": "Redirige tráfico no autorizado hacia otro puerto disponible", "selected": false },
+        { "text": "Apaga completamente el puerto tras detectar una MAC no autorizada", "selected": false }
       ]
     }
   ]

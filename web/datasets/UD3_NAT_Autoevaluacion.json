@@ -1,7 +1,7 @@
 {
   "sourcePdf": "C:\\Users\\david\\python\\redes\\web\\examenes\\UD3_NAT_Autoevaluacion.pdf",
   "exportedAt": "2026-05-14T18:15:30.000000+00:00",
-  "totalQuestions": 15,
+  "totalQuestions": 20,
   "items": [
     {
       "page": 1,
@@ -168,5 +168,60 @@
         { "text": "NAT inverso permite acceso externo a todos los dispositivos", "selected": false }
       ]
     },
+    {
+      "page": 4,
+      "questionNumber": 16,
+      "question": "¿Cuál es la conclusión sobre la adquisición del bloque de direcciones públicas?",
+      "answers": [
+        { "text": "Permite eliminar completamente el uso de direcciones privadas", "selected": false },
+        { "text": "Es imprescindible para permitir el funcionamiento de NAT dinámico", "selected": false },
+        { "text": "Es necesario para implementar NAT estático en todos los equipos", "selected": false },
+        { "text": "Supone un gasto innecesario dado el uso de PAT en la red interna", "selected": true }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 17,
+      "question": "¿Qué representa el pool de direcciones en NAT dinámico?",
+      "answers": [
+        { "text": "El conjunto de direcciones privadas de la red interna", "selected": false },
+        { "text": "El conjunto de puertos disponibles para conexiones simultáneas", "selected": false },
+        { "text": "El conjunto de IP públicas disponibles para asignación temporal", "selected": true },
+        { "text": "El conjunto de gateways configurados en la red", "selected": false }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 18,
+      "question": "¿Cuántas direcciones IP totales existen en una red con prefijo /29?",
+      "answers": [
+        { "text": "6 direcciones IP totales en el bloque asignado", "selected": false },
+        { "text": "16 direcciones IP totales en el bloque asignado", "selected": false },
+        { "text": "32 direcciones IP totales en el bloque asignado", "selected": false },
+        { "text": "8 direcciones IP totales en el bloque asignado", "selected": true }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 19,
+      "question": "¿Cuál es el número teórico de puertos disponibles en un sistema PAT?",
+      "answers": [
+        { "text": "65.536 puertos posibles para identificar conexiones simultáneas", "selected": true },
+        { "text": "16.384 puertos posibles para identificar conexiones simultáneas", "selected": false },
+        { "text": "32.768 puertos posibles para identificar conexiones simultáneas", "selected": false },
+        { "text": "8.192 puertos posibles para identificar conexiones simultáneas", "selected": false }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 20,
+      "question": "¿Qué ocurre cuando un séptimo equipo intenta conectarse usando NAT dinámico?",
+      "answers": [
+        { "text": "Debe esperar a que una IP pública sea liberada por otro equipo", "selected": true },
+        { "text": "Se convierte automáticamente en servidor de la red interna", "selected": false },
+        { "text": "Se le asigna automáticamente una nueva IP pública adicional", "selected": false },
+        { "text": "Se conecta utilizando el mismo puerto que otro equipo activo", "selected": false }
+      ]
+    }
   ]
 }

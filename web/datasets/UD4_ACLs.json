@@ -1,7 +1,7 @@
 {
   "sourcePdf": "C:\\Users\\david\\python\\redes\\web\\examenes\\UD_4_ACLs_Listas_de_Acceso.pdf",
   "exportedAt": "2026-05-14T18:40:12.000000+00:00",
-  "totalQuestions": 14,
+  "totalQuestions": 20,
   "items": [
     {
       "page": 1,
@@ -155,6 +155,72 @@
         { "text": "Cuando se crea al menos una regla de tipo permit en la lista", "selected": false },
         { "text": "Cuando se aplica explícitamente a una interfaz en dirección entrada o salida", "selected": true },
         { "text": "Cuando se reinicia el router tras cargar la configuración completa", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 15,
+      "question": "¿Qué representa la palabra clave any en una ACL Cisco?",
+      "answers": [
+        { "text": "Equivale a cualquier dirección IP usando máscara wildcard completa", "selected": true },
+        { "text": "Equivale a una única dirección IP específica de la red", "selected": false },
+        { "text": "Equivale a direcciones privadas únicamente dentro de la red", "selected": false },
+        { "text": "Equivale a una subred con máscara fija definida manualmente", "selected": false }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 16,
+      "question": "¿Dónde deben colocarse preferentemente las ACL estándar en una red?",
+      "answers": [
+        { "text": "Cerca del destino para evitar bloquear tráfico legítimo en otras rutas", "selected": true },
+        { "text": "En cualquier interfaz ya que su ubicación no afecta al comportamiento", "selected": false },
+        { "text": "Exclusivamente en interfaces externas conectadas a Internet", "selected": false },
+        { "text": "Cerca del origen para maximizar la eficiencia del procesamiento interno", "selected": false }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 17,
+      "question": "¿Qué ventaja clave presentan las ACL extendidas frente a las estándar?",
+      "answers": [
+        { "text": "Permiten eliminar la necesidad de configurar rutas en el router", "selected": false },
+        { "text": "Permiten sustituir completamente el uso de firewalls en redes", "selected": false },
+        { "text": "Permiten asignar direcciones IP automáticamente a dispositivos internos", "selected": false },
+        { "text": "Permiten filtrar por origen destino protocolo y puerto de forma granular", "selected": true }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 18,
+      "question": "¿Cómo se comporta una ACL aplicada en dirección de salida en una interfaz?",
+      "answers": [
+        { "text": "Se aplica solo a tráfico entrante desde redes externas", "selected": false },
+        { "text": "Se evalúa antes del enrutamiento y evita cálculos de ruta internos", "selected": false },
+        { "text": "Se utiliza únicamente para tráfico multicast dentro de la red", "selected": false },
+        { "text": "Se evalúa después del enrutamiento antes de enviar el paquete final", "selected": true }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 19,
+      "question": "¿Cuál es el rango clásico de numeración para ACL extendidas en Cisco IOS?",
+      "answers": [
+        { "text": "300 a 399 para listas extendidas en versiones iniciales del sistema", "selected": false },
+        { "text": "1 a 99 para listas extendidas en versiones tradicionales del sistema", "selected": false },
+        { "text": "100 a 199 para listas extendidas en versiones tradicionales del sistema", "selected": true },
+        { "text": "200 a 299 para listas extendidas en versiones modernas del sistema", "selected": false }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 20,
+      "question": "¿Cuál es la principal limitación funcional de las ACL estándar en Cisco?",
+      "answers": [
+        { "text": "Solo filtran tráfico basándose en la dirección IP de origen del paquete", "selected": true },
+        { "text": "Solo pueden aplicarse en interfaces de salida en routers Cisco", "selected": false },
+        { "text": "Solo funcionan con protocolos de transporte como TCP o UDP", "selected": false },
+        { "text": "Solo permiten filtrar tráfico en función de puertos de destino específicos", "selected": false }
       ]
     }
   ]
