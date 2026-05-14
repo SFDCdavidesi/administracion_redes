@@ -1,7 +1,7 @@
 {
   "sourcePdf": "C:\\Users\\david\\python\\redes\\web\\examenes\\UD_4_ACLs_Listas_de_Acceso.pdf",
   "exportedAt": "2026-05-14T18:40:12.000000+00:00",
-  "totalQuestions": 20,
+  "totalQuestions": 14,
   "items": [
     {
       "page": 1,
@@ -156,6 +156,6 @@
         { "text": "Cuando se aplica explícitamente a una interfaz en dirección entrada o salida", "selected": true },
         { "text": "Cuando se reinicia el router tras cargar la configuración completa", "selected": false }
       ]
-    },
-    {
-      "page
+    }
+  ]
+}

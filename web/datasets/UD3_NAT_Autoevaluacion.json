@@ -1,7 +1,7 @@
 {
   "sourcePdf": "C:\\Users\\david\\python\\redes\\web\\examenes\\UD3_NAT_Autoevaluacion.pdf",
   "exportedAt": "2026-05-14T18:15:30.000000+00:00",
-  "totalQuestions": 20,
+  "totalQuestions": 15,
   "items": [
     {
       "page": 1,
@@ -168,12 +168,5 @@
         { "text": "NAT inverso permite acceso externo a todos los dispositivos", "selected": false }
       ]
     },
-    {
-      "page": 4,
-      "questionNumber": 16,
-      "question": "¿Cuál es la conclusión sobre la adquisición del bloque de direcciones públicas?",
-      "answers": [
-        { "text": "Permite eliminar completamente el uso de direcciones privadas", "selected": false },
-        { "text": "Es imprescindible para permitir el funcionamiento de NAT dinámico", "selected": false },
-        { "text": "Es necesario para implementar NAT estático en todos los equipos", "selected": false },
-        { "text": "Supone un gasto innecesario dado el uso de PAT en la
+  ]
+}

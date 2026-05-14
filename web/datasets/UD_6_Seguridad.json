@@ -1,7 +1,7 @@
 {
   "sourcePdf": "C:\\Users\\david\\python\\redes\\web\\examenes\\UD_6_Seguridad.pdf",
   "exportedAt": "2026-05-14T18:45:10.000000+00:00",
-  "totalQuestions": 20,
+  "totalQuestions": 17,
   "items": [
     {
       "page": 1,
@@ -189,8 +189,6 @@
         { "text": "Aumenta velocidad de transmisión en todos los puertos activos", "selected": false },
         { "text": "Permite asignar más direcciones MAC a cada puerto disponible", "selected": false }
       ]
-    },
-    {
-      "page": 4,
-      "questionNumber": 18,
-      "question": "¿Cuál es la mejor estrategia global frente a amenazas
+    }
+  ]
+}
