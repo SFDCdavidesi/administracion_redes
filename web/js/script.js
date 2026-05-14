@@ -76,13 +76,13 @@ function updateMobileQuizLayout() {
   document.body.classList.toggle("quiz-mobile-active", mobileQuizActive);
 
   if (mobileQuizActive) {
-    el.prevBtn.textContent = "◀ Ant";
-    el.nextBtn.textContent = "Sig ▶";
+    el.prevBtn.textContent = "⬅️ Ant";
+    el.nextBtn.textContent = "Sig ➡️";
     el.prevBtn.classList.add("mobile-icon-btn");
     el.nextBtn.classList.add("mobile-icon-btn");
   } else {
-    el.prevBtn.textContent = "Anterior";
-    el.nextBtn.textContent = "Siguiente";
+    el.prevBtn.textContent = "⬅️ Anterior";
+    el.nextBtn.textContent = "Siguiente ➡️";
     el.prevBtn.classList.remove("mobile-icon-btn");
     el.nextBtn.classList.remove("mobile-icon-btn");
   }
@@ -105,7 +105,7 @@ function updateNavigatorUi() {
   const isOpen = !el.navigator.hidden;
   el.navigator.classList.toggle("mobile-open", isOpen && mobileQuery.matches);
   el.navigatorToggle.setAttribute("aria-expanded", String(isOpen));
-  el.navigatorToggle.textContent = isOpen ? "Ocultar navegador" : "Ver navegador";
+  el.navigatorToggle.textContent = isOpen ? "🧭 Ocultar navegador" : "🧭 Ver navegador";
 }
 
 function openNavigator() {
@@ -446,7 +446,7 @@ function exportQuestionsToPdf() {
         doc.addPage();
         y = 18;
       }
-      doc.setFont("helvetica", aIdx === correctIdx ? "bold" : "normal");
+      doc.setFont("helvetica", "normal");
       doc.setFontSize(10);
       y = addWrappedText(doc, rowText, margin + 4, y, textWidth - 6, 4.6);
       y += 0.6;
@@ -585,7 +585,7 @@ function importProgressData(data) {
 
   el.scoreOk.value = String(state.pointsCorrect);
   el.scoreFail.value = String(state.penaltyWrong);
-  el.shuffleBtn.textContent = `Mezclar preguntas: ${state.shuffle ? "ON" : "OFF"}`;
+  el.shuffleBtn.textContent = `🔀 Mezclar preguntas: ${state.shuffle ? "ON" : "OFF"}`;
   renderAll();
 }
 
@@ -1031,7 +1031,7 @@ function wireEvents() {
 
   el.shuffleBtn.addEventListener("click", () => {
     state.shuffle = !state.shuffle;
-    el.shuffleBtn.textContent = `Mezclar preguntas: ${state.shuffle ? "ON" : "OFF"}`;
+    el.shuffleBtn.textContent = `🔀 Mezclar preguntas: ${state.shuffle ? "ON" : "OFF"}`;
     recomputeQuestions();
   });
 

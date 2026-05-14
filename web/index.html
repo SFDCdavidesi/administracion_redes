@@ -19,28 +19,28 @@
         <div class="server-datasets essentials">
           <label for="serverDatasetSelect">JSON disponibles en carpeta datasets</label>
           <select id="serverDatasetSelect"></select>
-          <button id="loadServerDatasetBtn" class="btn" type="button">Cargar JSON</button>
-          <button id="refreshServerDatasetsBtn" class="btn" type="button">Actualizar</button>
+          <button id="loadServerDatasetBtn" class="btn" type="button">📥 Cargar JSON</button>
+          <button id="refreshServerDatasetsBtn" class="btn" type="button">🔄 Actualizar</button>
         </div>
         <button id="mobileControlsToggle" class="btn small mobile-controls-toggle" type="button" aria-expanded="false">🧰 Mas opciones</button>
       </div>
 
       <div class="toolbar advanced-controls">
-        <label class="btn" for="loadProgressInput">Cargar progreso</label>
+        <label class="btn" for="loadProgressInput">📂 Cargar progreso</label>
         <input id="loadProgressInput" type="file" accept="application/json">
-        <button id="saveProgressBtn" class="btn" type="button">Exportar progreso JSON</button>
-        <button id="downloadPdfBtn" class="btn" type="button">Descargar PDF de preguntas</button>
-        <button id="saveBrowserProgressBtn" class="btn" type="button">Guardar en navegador</button>
-        <button id="loadBrowserProgressBtn" class="btn" type="button">Cargar del navegador</button>
-        <button id="clearBrowserProgressBtn" class="btn" type="button">Borrar guardado local</button>
-        <button id="resetBtn" class="btn" type="button">Reiniciar progreso</button>
-        <button id="shuffleBtn" class="btn" type="button">Mezclar preguntas: OFF</button>
+        <button id="saveProgressBtn" class="btn" type="button">💾 Exportar progreso JSON</button>
+        <button id="downloadPdfBtn" class="btn" type="button">📄 Descargar PDF de preguntas</button>
+        <button id="saveBrowserProgressBtn" class="btn" type="button">🧠 Guardar en navegador</button>
+        <button id="loadBrowserProgressBtn" class="btn" type="button">♻️ Cargar del navegador</button>
+        <button id="clearBrowserProgressBtn" class="btn" type="button">🗑️ Borrar guardado local</button>
+        <button id="resetBtn" class="btn" type="button">🔁 Reiniciar progreso</button>
+        <button id="shuffleBtn" class="btn" type="button">🔀 Mezclar preguntas: OFF</button>
       </div>
 
       <div class="server-datasets advanced-controls">
         <label for="jsonFilesInput">JSON desde archivo externo</label>
         <input id="jsonFilesInput" type="file" accept="application/json,.json" multiple>
-        <button id="loadExternalJsonBtn" class="btn" type="button">Seleccionar JSON externo</button>
+        <button id="loadExternalJsonBtn" class="btn" type="button">📁 Seleccionar JSON externo</button>
       </div>
 
       <div class="sim-controls advanced-controls">
@@ -56,8 +56,8 @@
           Penalizacion fallo
           <input id="scoreFail" type="number" min="0" step="0.01" value="0.33">
         </label>
-        <button id="presetOfficialBtn" class="btn" type="button">Preset oficial +1/-0.33</button>
-        <button id="startSimBtn" class="btn" type="button">Iniciar simulacro</button>
+        <button id="presetOfficialBtn" class="btn" type="button">🎯 Preset oficial +1/-0.33</button>
+        <button id="startSimBtn" class="btn" type="button">⏱️ Iniciar simulacro</button>
         <span id="timerChip" class="timer-chip">Sin simulacro</span>
       </div>
 
@@ -99,7 +99,7 @@
           <span id="questionPage" class="pill">Pagina original: -</span>
           <span id="questionSource" class="pill">Fuente: -</span>
         </div>
-        <button id="navigatorToggle" class="btn small" type="button">Ver navegador</button>
+        <button id="navigatorToggle" class="btn small" type="button">🧭 Ver navegador</button>
       </header>
 
       <div class="progress-wrap" aria-label="Progreso">
@@ -114,8 +114,8 @@
       <div id="feedbackBox" class="feedback" hidden></div>
 
       <footer class="quiz-nav">
-        <button id="prevBtn" class="btn" type="button">Anterior</button>
-        <button id="nextBtn" class="btn" type="button">Siguiente</button>
+        <button id="prevBtn" class="btn" type="button">⬅️ Anterior</button>
+        <button id="nextBtn" class="btn" type="button">Siguiente ➡️</button>
       </footer>
     </section>
 
@@ -128,7 +128,7 @@
   <aside id="navigator" class="navigator" hidden>
     <div class="navigator-head">
       <h3>Navegador</h3>
-      <button id="closeNavigator" class="btn small" type="button">Cerrar</button>
+      <button id="closeNavigator" class="btn small" type="button">❌ Cerrar</button>
     </div>
     <div id="navigatorGrid" class="navigator-grid"></div>
   </aside>
