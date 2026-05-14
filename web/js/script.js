@@ -29,6 +29,7 @@ const el = {
   loadExternalJsonBtn: document.getElementById("loadExternalJsonBtn"),
   loadProgressInput: document.getElementById("loadProgressInput"),
   saveProgressBtn: document.getElementById("saveProgressBtn"),
+  downloadPdfBtn: document.getElementById("downloadPdfBtn"),
   saveBrowserProgressBtn: document.getElementById("saveBrowserProgressBtn"),
   loadBrowserProgressBtn: document.getElementById("loadBrowserProgressBtn"),
   clearBrowserProgressBtn: document.getElementById("clearBrowserProgressBtn"),
@@ -375,6 +376,156 @@ function exportProgress() {
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
   el.statusLine.textContent = "Progreso exportado en JSON.";
+}
+
+function addWrappedText(doc, text, x, y, maxWidth, lineHeight) {
+  const lines = doc.splitTextToSize(String(text || ""), maxWidth);
+  doc.text(lines, x, y);
+  return y + (lines.length * lineHeight);
+}
+
+function exportQuestionsToPdf() {
+  if (!state.questions.length) {
+    el.statusLine.textContent = "No hay preguntas cargadas para exportar en PDF.";
+    return;
+  }
+
+  const jsPdfLib = window.jspdf && window.jspdf.jsPDF;
+  if (!jsPdfLib) {
+    el.statusLine.textContent = "No se pudo inicializar la libreria PDF. Recarga la pagina e intentalo de nuevo.";
+    return;
+  }
+
+  const doc = new jsPdfLib({
+    orientation: "p",
+    unit: "mm",
+    format: "a4"
+  });
+
+  const width = doc.internal.pageSize.getWidth();
+  const height = doc.internal.pageSize.getHeight();
+  const margin = 14;
+  const textWidth = width - (margin * 2);
+  let y = 18;
+
+  doc.setFillColor(245, 233, 218);
+  doc.roundedRect(margin, 10, width - (margin * 2), 20, 2, 2, "F");
+  doc.setTextColor(31, 27, 23);
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(16);
+  doc.text("Campus Test Studio - Banco Actual", margin + 3, 18);
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  doc.text(`Generado: ${new Date().toLocaleString("es-ES")}`, margin + 3, 24);
+  doc.text(`Total de preguntas: ${state.questions.length}`, width - margin - 3, 24, { align: "right" });
+
+  y = 36;
+  const answerKeyRows = [];
+
+  state.questions.forEach((question, qIdx) => {
+    if (y > height - 48) {
+      doc.addPage();
+      y = 18;
+    }
+
+    doc.setDrawColor(234, 223, 206);
+    doc.setFillColor(255, 253, 249);
+    doc.roundedRect(margin, y - 5, textWidth, 10, 1.5, 1.5, "FD");
+
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(11);
+    doc.text(`Pregunta ${qIdx + 1}`, margin + 2, y + 1);
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(9);
+    doc.text(`Fuente: ${question.source || "-"} | Pagina: ${question.page ?? "-"}`, width - margin - 2, y + 1, { align: "right" });
+
+    y += 8;
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(11);
+    y = addWrappedText(doc, question.question, margin + 1, y, textWidth - 2, 5);
+    y += 1;
+
+    const letters = ["A", "B", "C", "D", "E", "F"];
+    const correctIdx = getCorrectIndex(question);
+    question.answers.forEach((answer, aIdx) => {
+      const prefix = `${letters[aIdx] || `${aIdx + 1}`}. `;
+      const rowText = `${prefix}${answer.text}`;
+      if (y > height - 18) {
+        doc.addPage();
+        y = 18;
+      }
+      doc.setFont("helvetica", aIdx === correctIdx ? "bold" : "normal");
+      doc.setFontSize(10);
+      y = addWrappedText(doc, rowText, margin + 4, y, textWidth - 6, 4.6);
+      y += 0.6;
+    });
+
+    const correctText = correctIdx >= 0 && question.answers[correctIdx]
+      ? question.answers[correctIdx].text
+      : "Sin respuesta correcta marcada";
+    answerKeyRows.push([
+      `P${qIdx + 1}`,
+      `${letters[correctIdx] || "-"}`,
+      correctText
+    ]);
+
+    y += 4;
+  });
+
+  doc.addPage();
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(14);
+  doc.text("Tabla de respuestas correctas", margin, 18);
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  doc.text("Resumen final del banco de preguntas cargado", margin, 24);
+
+  if (typeof doc.autoTable === "function") {
+    doc.autoTable({
+      startY: 30,
+      margin: { left: margin, right: margin },
+      head: [["Pregunta", "Respuesta", "Texto correcto"]],
+      body: answerKeyRows,
+      theme: "grid",
+      styles: {
+        font: "helvetica",
+        fontSize: 9,
+        cellPadding: 2
+      },
+      headStyles: {
+        fillColor: [216, 125, 62],
+        textColor: [255, 255, 255]
+      },
+      columnStyles: {
+        0: { cellWidth: 24 },
+        1: { cellWidth: 24 },
+        2: { cellWidth: "auto" }
+      }
+    });
+  } else {
+    let rowY = 32;
+    doc.setFont("helvetica", "bold");
+    doc.text("Pregunta", margin, rowY);
+    doc.text("Respuesta", margin + 30, rowY);
+    doc.text("Texto correcto", margin + 60, rowY);
+    doc.setFont("helvetica", "normal");
+    rowY += 6;
+    answerKeyRows.forEach((row) => {
+      if (rowY > height - 12) {
+        doc.addPage();
+        rowY = 18;
+      }
+      doc.text(String(row[0]), margin, rowY);
+      doc.text(String(row[1]), margin + 30, rowY);
+      const wrapped = doc.splitTextToSize(String(row[2]), width - margin - (margin + 60));
+      doc.text(wrapped, margin + 60, rowY);
+      rowY += Math.max(6, wrapped.length * 4.2);
+    });
+  }
+
+  const fileName = `preguntas_cargadas_${new Date().toISOString().slice(0, 19).replace(/[:T]/g, "-")}.pdf`;
+  doc.save(fileName);
+  el.statusLine.textContent = "PDF generado correctamente con preguntas y tabla de respuestas.";
 }
 
 function saveBrowserProgress() {
@@ -918,6 +1069,9 @@ function wireEvents() {
     renderAll();
   });
   el.saveProgressBtn.addEventListener("click", exportProgress);
+  if (el.downloadPdfBtn) {
+    el.downloadPdfBtn.addEventListener("click", exportQuestionsToPdf);
+  }
   if (el.saveBrowserProgressBtn) {
     el.saveBrowserProgressBtn.addEventListener("click", saveBrowserProgress);
   }

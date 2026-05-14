@@ -20,6 +20,7 @@
         <label class="btn" for="loadProgressInput">Cargar progreso</label>
         <input id="loadProgressInput" type="file" accept="application/json">
         <button id="saveProgressBtn" class="btn" type="button">Exportar progreso JSON</button>
+        <button id="downloadPdfBtn" class="btn" type="button">Descargar PDF de preguntas</button>
         <button id="saveBrowserProgressBtn" class="btn" type="button">Guardar en navegador</button>
         <button id="loadBrowserProgressBtn" class="btn" type="button">Cargar del navegador</button>
         <button id="clearBrowserProgressBtn" class="btn" type="button">Borrar guardado local</button>
@@ -130,6 +131,8 @@
     <div id="navigatorGrid" class="navigator-grid"></div>
   </aside>
 
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
