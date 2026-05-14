@@ -1,0 +1,179 @@
+{
+  "sourcePdf": "C:\\Users\\david\\python\\redes\\web\\examenes\\UD3_NAT_Autoevaluacion.pdf",
+  "exportedAt": "2026-05-14T18:15:30.000000+00:00",
+  "totalQuestions": 20,
+  "items": [
+    {
+      "page": 1,
+      "questionNumber": 1,
+      "question": "¿Cuál es el límite máximo de conexiones simultáneas en NAT dinámico?",
+      "answers": [
+        { "text": "Igual al número de routers configurados en la red", "selected": false },
+        { "text": "Igual al número de direcciones IP públicas disponibles en el pool", "selected": true },
+        { "text": "Igual al número de dispositivos internos conectados a la red", "selected": false },
+        { "text": "Igual al número de puertos disponibles en el sistema", "selected": false }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 2,
+      "question": "¿Cuántas direcciones IP públicas utilizables existen en una red /29?",
+      "answers": [
+        { "text": "7 direcciones IP utilizables para asignación real", "selected": false },
+        { "text": "8 direcciones IP utilizables para asignación real", "selected": false },
+        { "text": "6 direcciones IP utilizables para asignación real", "selected": true },
+        { "text": "4 direcciones IP utilizables para asignación real", "selected": false }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 3,
+      "question": "¿Por qué no todos los 65.536 puertos están disponibles en la práctica?",
+      "answers": [
+        { "text": "Porque algunos puertos están reservados para servicios específicos", "selected": true },
+        { "text": "Porque el router limita automáticamente el número de conexiones", "selected": false },
+        { "text": "Porque NAT dinámico bloquea el uso de ciertos puertos", "selected": false },
+        { "text": "Porque las IP públicas reducen el número de puertos disponibles", "selected": false }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 4,
+      "question": "¿Cómo se identifica cada conexión en un sistema que utiliza PAT?",
+      "answers": [
+        { "text": "Mediante la combinación de MAC del dispositivo y dirección IP", "selected": false },
+        { "text": "Mediante la combinación de gateway y dirección IP privada", "selected": false },
+        { "text": "Mediante la combinación de dirección IP pública y número de puerto", "selected": true },
+        { "text": "Mediante la combinación de dirección IP privada y máscara de red", "selected": false }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 5,
+      "question": "¿Cuál es la diferencia clave entre PAT y NAT dinámico?",
+      "answers": [
+        { "text": "PAT asigna IP públicas fijas mientras NAT dinámico no lo hace", "selected": false },
+        { "text": "PAT usa puertos para múltiples conexiones mientras NAT dinámico no", "selected": true },
+        { "text": "PAT requiere más direcciones IP públicas que NAT dinámico", "selected": false },
+        { "text": "PAT no permite acceso simultáneo de múltiples dispositivos", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 6,
+      "question": "¿Qué característica define correctamente el funcionamiento de PAT?",
+      "answers": [
+        { "text": "Asigna una IP pública fija exclusiva a cada dispositivo interno", "selected": false },
+        { "text": "Multiplexa múltiples conexiones usando una IP pública y distintos puertos", "selected": true },
+        { "text": "Utiliza únicamente direcciones privadas para salir a Internet", "selected": false },
+        { "text": "Impide el acceso simultáneo de múltiples dispositivos internos", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 7,
+      "question": "¿Qué característica describe correctamente el NAT estático?",
+      "answers": [
+        { "text": "Asocia permanentemente una IP privada con una IP pública específica", "selected": true },
+        { "text": "Asigna IP públicas dinámicamente desde un pool compartido", "selected": false },
+        { "text": "Utiliza únicamente direcciones privadas para comunicación externa", "selected": false },
+        { "text": "Permite múltiples conexiones usando una única IP pública", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 8,
+      "question": "¿Cuál es la ventaja principal de usar PAT con una sola IP pública?",
+      "answers": [
+        { "text": "Permite eliminar completamente el uso de puertos en la red", "selected": false },
+        { "text": "Permite a muchos dispositivos compartir una única dirección pública", "selected": true },
+        { "text": "Permite asignar múltiples IP públicas a cada dispositivo", "selected": false },
+        { "text": "Permite evitar el uso de direcciones privadas internas", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 9,
+      "question": "¿Por qué la adquisición de un bloque /29 no es estrictamente necesaria?",
+      "answers": [
+        { "text": "Porque una única IP pública sería suficiente usando NAT por puertos", "selected": true },
+        { "text": "Porque el router genera automáticamente IP públicas adicionales", "selected": false },
+        { "text": "Porque no se necesitan direcciones IP para acceder a Internet", "selected": false },
+        { "text": "Porque las IP privadas permiten acceso directo a Internet", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 10,
+      "question": "¿Por qué NAT estático no es viable con 50 equipos y 6 IP públicas?",
+      "answers": [
+        { "text": "Permite múltiples equipos por cada IP pública disponible", "selected": false },
+        { "text": "Requiere correspondencia uno a uno entre IP privada e IP pública", "selected": true },
+        { "text": "Asigna dinámicamente direcciones según disponibilidad del pool", "selected": false },
+        { "text": "Usa puertos para diferenciar múltiples conexiones simultáneas", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 11,
+      "question": "¿Por qué PAT permite que 50 equipos accedan simultáneamente a Internet?",
+      "answers": [
+        { "text": "Porque el router elimina la necesidad de direcciones IP privadas internas", "selected": false },
+        { "text": "Porque asigna múltiples IP públicas adicionales automáticamente", "selected": false },
+        { "text": "Porque utiliza diferentes puertos para distinguir cada conexión activa", "selected": true },
+        { "text": "Porque divide la red en múltiples subredes independientes", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 12,
+      "question": "¿Qué caracteriza al NAT dinámico frente al NAT estático?",
+      "answers": [
+        { "text": "No permite reutilizar direcciones IP una vez asignadas", "selected": false },
+        { "text": "Asigna siempre la misma IP pública a cada dispositivo interno", "selected": false },
+        { "text": "Asigna IP públicas de un pool según disponibilidad temporal", "selected": true },
+        { "text": "Utiliza una sola IP pública para todos los dispositivos internos", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 13,
+      "question": "¿Cuál es la limitación principal del NAT dinámico en este escenario?",
+      "answers": [
+        { "text": "Solo permite tantas conexiones simultáneas como IP públicas disponibles", "selected": true },
+        { "text": "Asigna una única IP pública fija para todos los dispositivos internos", "selected": false },
+        { "text": "No permite reutilizar direcciones IP públicas liberadas dinámicamente", "selected": false },
+        { "text": "Permite ilimitadas conexiones simultáneas mediante uso de puertos", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 14,
+      "question": "¿Qué número de bits quedan disponibles para hosts en una red con prefijo /29?",
+      "answers": [
+        { "text": "3 bits para hosts disponibles en la subred definida", "selected": true },
+        { "text": "8 bits para hosts disponibles en la subred definida", "selected": false },
+        { "text": "5 bits para hosts disponibles en la subred definida", "selected": false },
+        { "text": "29 bits para hosts disponibles en la subred definida", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 15,
+      "question": "¿Qué tipo de NAT es más adecuado para 50 equipos con 6 IP públicas?",
+      "answers": [
+        { "text": "PAT permite acceso simultáneo eficiente usando una sola IP pública", "selected": true },
+        { "text": "NAT estático permite acceso simultáneo con múltiples IP públicas", "selected": false },
+        { "text": "NAT dinámico permite acceso ilimitado sin restricción de IP", "selected": false },
+        { "text": "NAT inverso permite acceso externo a todos los dispositivos", "selected": false }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 16,
+      "question": "¿Cuál es la conclusión sobre la adquisición del bloque de direcciones públicas?",
+      "answers": [
+        { "text": "Permite eliminar completamente el uso de direcciones privadas", "selected": false },
+        { "text": "Es imprescindible para permitir el funcionamiento de NAT dinámico", "selected": false },
+        { "text": "Es necesario para implementar NAT estático en todos los equipos", "selected": false },
+        { "text": "Supone un gasto innecesario dado el uso de PAT en la

@@ -1,0 +1,196 @@
+{
+  "sourcePdf": "C:\\Users\\david\\python\\redes\\web\\examenes\\UD_6_Seguridad.pdf",
+  "exportedAt": "2026-05-14T18:45:10.000000+00:00",
+  "totalQuestions": 20,
+  "items": [
+    {
+      "page": 1,
+      "questionNumber": 1,
+      "question": "¿Qué fase ocurre después de la instalación del malware en un sistema?",
+      "answers": [
+        { "text": "La eliminación automática del malware sin causar impacto alguno", "selected": false },
+        { "text": "La reasignación de direcciones IP dentro de la red interna", "selected": false },
+        { "text": "La ejecución del payload que realiza acciones como robo o cifrado", "selected": true },
+        { "text": "La desconexión inmediata del sistema de la red corporativa", "selected": false }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 2,
+      "question": "¿Por qué la capa 2 es considerada el eslabón más débil en seguridad de red?",
+      "answers": [
+        { "text": "Porque permite acceso físico directo sin autenticación en muchos casos", "selected": true },
+        { "text": "Porque utiliza direcciones IP en lugar de direcciones MAC internas", "selected": false },
+        { "text": "Porque no permite comunicación entre dispositivos de la red", "selected": false },
+        { "text": "Porque elimina completamente el tráfico broadcast en la red", "selected": false }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 3,
+      "question": "¿Cuál es la diferencia principal entre malware como keylogger y ransomware?",
+      "answers": [
+        { "text": "Ambos realizan exactamente la misma función en sistemas comprometidos", "selected": false },
+        { "text": "El keylogger cifra datos mientras ransomware captura credenciales del usuario", "selected": false },
+        { "text": "Ambos eliminan archivos del sistema sin posibilidad de recuperación", "selected": false },
+        { "text": "El keylogger captura información mientras ransomware cifra datos para extorsión", "selected": true }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 4,
+      "question": "¿Por qué los troyanos pueden evadir firewalls perimetrales correctamente?",
+      "answers": [
+        { "text": "Utilizan únicamente conexiones entrantes abiertas por el firewall", "selected": false },
+        { "text": "Utilizan conexiones salientes desde la víctima evitando bloqueos de entrada", "selected": true },
+        { "text": "Utilizan cifrado para impedir cualquier tipo de filtrado en red", "selected": false },
+        { "text": "Utilizan direcciones MAC falsas para evitar detección en switches", "selected": false }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 5,
+      "question": "¿Qué diferencia existe entre exploit y payload dentro de un ataque software?",
+      "answers": [
+        { "text": "Ambos conceptos son idénticos dentro del ciclo de ataque software", "selected": false },
+        { "text": "El payload aprovecha vulnerabilidad el exploit ejecuta acción maliciosa", "selected": false },
+        { "text": "Ambos eliminan la necesidad de vulnerabilidades en el sistema", "selected": false },
+        { "text": "El exploit aprovecha vulnerabilidad el payload ejecuta acción maliciosa", "selected": true }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 6,
+      "question": "¿Qué ventaja ofrece el modo sticky en Port Security correctamente?",
+      "answers": [
+        { "text": "Permite guardar MAC aprendidas en configuración persistente del dispositivo", "selected": true },
+        { "text": "Permite asignar direcciones IP a cada MAC aprendida dinámicamente", "selected": false },
+        { "text": "Permite deshabilitar completamente el puerto ante cualquier tráfico", "selected": false },
+        { "text": "Permite eliminar automáticamente MAC tras reinicio del sistema", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 7,
+      "question": "¿Cuál es el objetivo principal de Port Security en switches Cisco?",
+      "answers": [
+        { "text": "Limitar direcciones MAC por puerto para evitar accesos no autorizados", "selected": true },
+        { "text": "Permitir cualquier dispositivo acceder a la red sin restricciones", "selected": false },
+        { "text": "Asignar direcciones IP automáticamente a dispositivos conectados", "selected": false },
+        { "text": "Eliminar tráfico broadcast en redes LAN corporativas", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 8,
+      "question": "¿Qué característica define el uso de reverse shell en troyanos modernos?",
+      "answers": [
+        { "text": "El atacante utiliza únicamente conexiones locales sin red externa", "selected": false },
+        { "text": "La víctima elimina conexiones activas impidiendo acceso remoto", "selected": false },
+        { "text": "La víctima inicia conexión hacia atacante permitiendo control remoto encubierto", "selected": true },
+        { "text": "El atacante inicia conexión directa hacia la víctima sin restricciones", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 9,
+      "question": "¿Por qué un exploit zero day es extremadamente peligroso en sistemas?",
+      "answers": [
+        { "text": "Porque explota vulnerabilidades desconocidas sin parche disponible aún", "selected": true },
+        { "text": "Porque solo afecta a sistemas antiguos sin actualizaciones recientes", "selected": false },
+        { "text": "Porque requiere acceso físico al dispositivo para ejecutarse siempre", "selected": false },
+        { "text": "Porque solo funciona en redes privadas sin acceso a Internet", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 10,
+      "question": "¿Por qué el ransomware es especialmente destructivo en empresas modernas?",
+      "answers": [
+        { "text": "Porque afecta exclusivamente a usuarios individuales sin impacto global", "selected": false },
+        { "text": "Porque elimina físicamente los dispositivos de almacenamiento de datos", "selected": false },
+        { "text": "Porque bloquea únicamente el acceso a Internet sin afectar archivos", "selected": false },
+        { "text": "Porque sin la clave privada los datos quedan inaccesibles permanentemente", "selected": true }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 11,
+      "question": "¿Cuál es la fase más crítica del ransomware en un ataque completo?",
+      "answers": [
+        { "text": "La eliminación automática del malware tras la infección inicial", "selected": false },
+        { "text": "La desconexión del sistema sin afectar a los archivos internos", "selected": false },
+        { "text": "La instalación inicial sin impacto real en el sistema comprometido", "selected": false },
+        { "text": "El cifrado de datos que impide acceso a la información de la organización", "selected": true }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 12,
+      "question": "¿Cómo se exfiltran normalmente los datos capturados por un keylogger?",
+      "answers": [
+        { "text": "Se eliminan automáticamente tras cada sesión del usuario en el sistema", "selected": false },
+        { "text": "Se envían automáticamente al atacante mediante protocolos de transferencia remota", "selected": true },
+        { "text": "Se almacenan únicamente en el sistema sin ser transmitidos externamente", "selected": false },
+        { "text": "Se convierten en paquetes broadcast dentro de la red local", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 13,
+      "question": "¿Qué ocurre cuando un puerto aprende una MAC en modo básico Port Security?",
+      "answers": [
+        { "text": "La MAC se comparte con todos los puertos del switch automáticamente", "selected": false },
+        { "text": "La MAC se elimina automáticamente tras cada transmisión de datos", "selected": false },
+        { "text": "La MAC se convierte en dirección IP dentro de la red local", "selected": false },
+        { "text": "La MAC queda registrada como permitida bloqueando otras no autorizadas", "selected": true }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 14,
+      "question": "¿Cuál es el vector de entrada más habitual en ataques de malware modernos?",
+      "answers": [
+        { "text": "Configuración manual de direcciones IP en equipos finales", "selected": false },
+        { "text": "Phishing dispositivos USB o descargas web maliciosas en sistemas", "selected": true },
+        { "text": "Uso de VLANs incorrectamente configuradas en la red local", "selected": false },
+        { "text": "Conexiones internas entre switches sin intervención del usuario", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 15,
+      "question": "¿Qué ocurre en modo shutdown ante una violación de Port Security?",
+      "answers": [
+        { "text": "El puerto se deshabilita completamente requiriendo intervención manual", "selected": true },
+        { "text": "El puerto sigue funcionando descartando únicamente tráfico no autorizado", "selected": false },
+        { "text": "El puerto cambia automáticamente de VLAN tras la violación detectada", "selected": false },
+        { "text": "El puerto registra el evento sin afectar funcionamiento normal", "selected": false }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 16,
+      "question": "¿Qué caracteriza el modo restrict en Port Security dentro de un switch?",
+      "answers": [
+        { "text": "Descarta tráfico no autorizado y genera logs sin apagar el puerto activo", "selected": true },
+        { "text": "Bloquea únicamente tráfico broadcast en la red local", "selected": false },
+        { "text": "Apaga completamente el puerto ante cualquier violación detectada", "selected": false },
+        { "text": "Permite todo el tráfico sin generar ningún tipo de registro", "selected": false }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 17,
+      "question": "¿Por qué es importante deshabilitar puertos no utilizados en switches?",
+      "answers": [
+        { "text": "Elimina necesidad de usar firewalls en la red corporativa", "selected": false },
+        { "text": "Evita accesos físicos no autorizados reduciendo superficie de ataque", "selected": true },
+        { "text": "Aumenta velocidad de transmisión en todos los puertos activos", "selected": false },
+        { "text": "Permite asignar más direcciones MAC a cada puerto disponible", "selected": false }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 18,
+      "question": "¿Cuál es la mejor estrategia global frente a amenazas

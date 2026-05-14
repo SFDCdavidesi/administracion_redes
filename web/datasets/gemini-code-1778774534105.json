@@ -1,0 +1,228 @@
+{
+  "sourcePdf": "C:\\Users\\david\\python\\redes\\web\\examenes\\Examen_VLANs.pdf",
+  "exportedAt": "2026-05-14T18:05:12.000000+00:00",
+  "totalQuestions": 20,
+  "items": [
+    {
+      "page": 1,
+      "questionNumber": 1,
+      "question": "Según la unidad, cada VLAN debería ser:",
+      "answers": [
+        { "text": "Una extensión física del mismo dominio IP", "selected": false },
+        { "text": "Parte de la misma red IP", "selected": false },
+        { "text": "Un único dominio broadcast y IP compartido", "selected": false },
+        { "text": "Una red o subred distinta a nivel 3", "selected": true }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 2,
+      "question": "El router permite la comunicación entre VLANes porque trabaja en:",
+      "answers": [
+        { "text": "Nivel 3 (IP)", "selected": true },
+        { "text": "Nivel 2 (MAC)", "selected": false },
+        { "text": "Nivel 1 (Físico)", "selected": false },
+        { "text": "Nivel 7 (Aplicación)", "selected": false }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 3,
+      "question": "Para que dos equipos en la misma VLAN pero en switches distintos se comuniquen correctamente se necesita:",
+      "answers": [
+        { "text": "Un cable directo entre PCs", "selected": false },
+        { "text": "Asignarles la misma IP", "selected": false },
+        { "text": "Un hub intermedio", "selected": false },
+        { "text": "Un enlace trunk entre los switches", "selected": true }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 4,
+      "question": "¿Por qué no sería viable tener 50 VLANes en un switch de acceso de 24 puertos usando un puerto por VLAN?",
+      "answers": [
+        { "text": "Porque no habría puertos suficientes para usuarios", "selected": true },
+        { "text": "Porque no soporta direccionamiento MAC", "selected": false },
+        { "text": "Porque el switch dejaría de funcionar", "selected": false },
+        { "text": "Porque el router lo impediría", "selected": false }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 5,
+      "question": "¿Cuál es el objetivo principal de una VLAN según la unidad didáctica?",
+      "answers": [
+        { "text": "Convertir el switch en un dispositivo de nivel 3", "selected": false },
+        { "text": "Eliminar la necesidad de routers en la red", "selected": false },
+        { "text": "Aumentar el ancho de banda físico del switch", "selected": false },
+        { "text": "Crear un dominio de difusión independiente a nivel 2", "selected": true }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 6,
+      "question": "Por defecto, un puerto trunk:",
+      "answers": [
+        { "text": "Solo transporta tráfico no etiquetado", "selected": false },
+        { "text": "No pertenece a ninguna VLAN", "selected": false },
+        { "text": "Pertenece a todas las VLANes", "selected": true },
+        { "text": "Pertenece únicamente a la VLAN 1", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 7,
+      "question": "¿Qué permite extender VLANes a múltiples switches sin usar un puerto por VLAN?",
+      "answers": [
+        { "text": "Configuración de puertos trunk", "selected": true },
+        { "text": "Asignación manual de MAC", "selected": false },
+        { "text": "Modo acceso múltiple", "selected": false },
+        { "text": "Uso de hubs intermedios", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 8,
+      "question": "Un puerto configurado en modo acceso:",
+      "answers": [
+        { "text": "Pertenece por defecto a todas las VLANes", "selected": false },
+        { "text": "Se utiliza para conectar máquinas finales y pertenece a una única VLAN", "selected": true },
+        { "text": "Etiqueta tramas de múltiples VLANes", "selected": false },
+        { "text": "Solo puede conectarse a routers", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 9,
+      "question": "Si un equipo de una VLAN envía una trama a FF:FF:FF:FF:FF:FF, ¿quién la recibe?",
+      "answers": [
+        { "text": "Todos los equipos conectados al switch", "selected": false },
+        { "text": "Todos los equipos de la red, independientemente de la VLAN", "selected": false },
+        { "text": "Solo el router", "selected": false },
+        { "text": "Solo los equipos pertenecientes a la misma VLAN", "selected": true }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 10,
+      "question": "¿Cuál es el dispositivo adecuado para comunicar VLANes distintas manteniendo separados los dominios de difusión?",
+      "answers": [
+        { "text": "Un router", "selected": true },
+        { "text": "Un switch en modo acceso", "selected": false },
+        { "text": "Un hub", "selected": false },
+        { "text": "Un repetidor", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 11,
+      "question": "¿Cuál es el principal problema de conectar switches usando un puerto por cada VLAN?",
+      "answers": [
+        { "text": "No permite comunicación entre VLANes", "selected": false },
+        { "text": "Elimina el dominio de broadcast", "selected": false },
+        { "text": "No es escalable ni viable económicamente", "selected": true },
+        { "text": "Convierte el switch en hub", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 12,
+      "question": "¿Por qué conectar VLANes distintas a un HUB es desaconsejable?",
+      "answers": [
+        { "text": "Porque el hub etiqueta las tramas incorrectamente", "selected": false },
+        { "text": "Porque el hub actúa como router", "selected": false },
+        { "text": "Porque el hub realiza inundación y une los dominios de difusión", "selected": true },
+        { "text": "Porque el hub devuelve las direcciones MAC", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 13,
+      "question": "La creación de VLANes permite:",
+      "answers": [
+        { "text": "Convertir tráfico broadcast en unicast", "selected": false },
+        { "text": "Eliminar completamente el broadcast", "selected": false },
+        { "text": "Reducir el tráfico broadcast en la red", "selected": true },
+        { "text": "Duplicar el tráfico broadcast", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 14,
+      "question": "Las VLANes operan principalmente en:",
+      "answers": [
+        { "text": "Nivel 2 del modelo OSI", "selected": true },
+        { "text": "Nivel 1 del modelo OSI", "selected": false },
+        { "text": "Nivel 4 del modelo OSI", "selected": false },
+        { "text": "Nivel 3 del modelo OSI", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 15,
+      "question": "Entender VLANes es fundamental porque:",
+      "answers": [
+        { "text": "Sustituye el modelo OSI", "selected": false },
+        { "text": "Elimina completamente la necesidad de subnetting", "selected": false },
+        { "text": "Permite evitar el uso de routers", "selected": false },
+        { "text": "Es la base para diseñar y administrar redes a nivel de enlace", "selected": true }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 16,
+      "question": "Un dominio de difusión se refiere a:",
+      "answers": [
+        { "text": "La tabla de rutas del router", "selected": false },
+        { "text": "El conjunto de routers interconectados", "selected": false },
+        { "text": "El rango de direcciones IP públicas", "selected": false },
+        { "text": "El conjunto de dispositivos que reciben una trama broadcast", "selected": true }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 17,
+      "question": "Un puerto trunk puede configurarse para:",
+      "answers": [
+        { "text": "Permitir solo una VLAN", "selected": false },
+        { "text": "Funcionar exclusivamente como acceso", "selected": false },
+        { "text": "Permitir todas, varias o unas pocas VLANes", "selected": true },
+        { "text": "Eliminar el etiquetado", "selected": false }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 18,
+      "question": "¿Dónde se almacenan las VLAN creadas en un switch?",
+      "answers": [
+        { "text": "En la memoria RAM temporal del switch", "selected": false },
+        { "text": "En un fichero denominado vlan.dat dentro del propio switch", "selected": true },
+        { "text": "En el router principal", "selected": false },
+        { "text": "En el servidor DHCP", "selected": false }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 19,
+      "question": "Si conectamos un puerto de VLAN 3 a un puerto de VLAN 4 directamente, ¿qué ocurre?",
+      "answers": [
+        { "text": "Se enrutan correctamente a nivel 3", "selected": false },
+        { "text": "Se bloquea el tráfico automáticamente", "selected": false },
+        { "text": "Se mantiene la separación a nivel MAC", "selected": false },
+        { "text": "Se unen los dominios de difusión convirtiéndose en una misma VLAN", "selected": true }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 20,
+      "question": "¿Cómo se evita que el tráfico de diferentes VLANes se mezcle en un puerto trunk?",
+      "answers": [
+        { "text": "Mediante el etiquetado de tramas con un identificador de VLAN", "selected": true },
+        { "text": "Asignando una IP diferente a cada VLAN", "selected": false },
+        { "text": "Utilizando un hub intermedio", "selected": false },
+        { "text": "Configurando el puerto como acceso", "selected": false }
+      ]
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,228 @@
+{
+  "sourcePdf": "C:\\Users\\david\\python\\redes\\web\\examenes\\UD5_Routing_Autoevaluacion.pdf",
+  "exportedAt": "2026-05-14T18:30:15.000000+00:00",
+  "totalQuestions": 20,
+  "items": [
+    {
+      "page": 1,
+      "questionNumber": 1,
+      "question": "¿Qué caracteriza una solución mixta de enrutamiento estático?",
+      "answers": [
+        { "text": "Utiliza únicamente rutas por defecto en todos los routers", "selected": false },
+        { "text": "Utiliza únicamente rutas dinámicas para toda la red completa", "selected": false },
+        { "text": "Combina rutas por origen por destino y rutas por defecto en la red", "selected": true },
+        { "text": "Elimina la necesidad de configurar rutas en los routers", "selected": false }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 2,
+      "question": "¿Qué función cumple una ruta por defecto en un router?",
+      "answers": [
+        { "text": "Bloquear tráfico no autorizado en la red local", "selected": false },
+        { "text": "Eliminar automáticamente rutas redundantes de la tabla", "selected": false },
+        { "text": "Asignar direcciones IP dinámicamente a dispositivos finales", "selected": false },
+        { "text": "Enviar tráfico desconocido hacia un gateway definido como salida general", "selected": true }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 3,
+      "question": "¿Qué permite el protocolo RIP en una red de routers?",
+      "answers": [
+        { "text": "Filtrar tráfico mediante reglas de control de acceso", "selected": false },
+        { "text": "Intercambiar información de rutas automáticamente entre routers vecinos", "selected": true },
+        { "text": "Asignar direcciones IP dinámicamente a todos los dispositivos", "selected": false },
+        { "text": "Traducir direcciones IP en direcciones MAC automáticamente", "selected": false }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 4,
+      "question": "¿Qué define el enrutamiento estático basado en el destino?",
+      "answers": [
+        { "text": "Se ignora la dirección destino y se usa únicamente la interfaz local", "selected": false },
+        { "text": "Se eliminan todas las rutas excepto la ruta por defecto global", "selected": false },
+        { "text": "Se especifica el siguiente salto indicando la IP del router vecino destino", "selected": true },
+        { "text": "Se utiliza únicamente información de protocolos dinámicos", "selected": false }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 5,
+      "question": "¿Qué ocurre cuando un host hace ARP hacia otra subred diferente?",
+      "answers": [
+        { "text": "Solicita la MAC del router gateway en lugar de la del destino final", "selected": true },
+        { "text": "Solicita la MAC del host destino directamente sin intermediarios", "selected": false },
+        { "text": "Solicita la dirección IP del router en lugar de la dirección MAC", "selected": false },
+        { "text": "No realiza ninguna solicitud ARP al tratarse de otra subred", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 6,
+      "question": "¿Cuál es el objetivo principal del enrutamiento entre redes distintas?",
+      "answers": [
+        { "text": "Asignar direcciones IP automáticamente a todos los dispositivos de red", "selected": false },
+        { "text": "Permitir la comunicación entre dispositivos ubicados en subredes diferentes", "selected": true },
+        { "text": "Convertir direcciones privadas en públicas para acceso a Internet", "selected": false },
+        { "text": "Gestionar únicamente el tráfico interno dentro de una misma subred", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 7,
+      "question": "¿Qué factor influye más en elegir routing estático o dinámico?",
+      "answers": [
+        { "text": "El tipo de cableado físico determina el tipo de routing usado", "selected": false },
+        { "text": "El tamaño complejidad y cambios de la red determinan la elección adecuada", "selected": true },
+        { "text": "El sistema operativo de los PCs define el routing necesario", "selected": false },
+        { "text": "El número de usuarios finales define el tipo de routing usado", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 8,
+      "question": "¿Qué caracteriza al enrutamiento estático en redes IP?",
+      "answers": [
+        { "text": "Se eliminan completamente las tablas de enrutamiento del sistema", "selected": false },
+        { "text": "Los routers aprenden rutas automáticamente mediante protocolos dinámicos", "selected": false },
+        { "text": "Se asignan direcciones IP automáticamente a todos los dispositivos", "selected": false },
+        { "text": "El administrador define manualmente todas las rutas sin automatización", "selected": true }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 9,
+      "question": "¿Qué información proporciona el comando traceroute en redes IP?",
+      "answers": [
+        { "text": "Asigna direcciones IP dinámicas a todos los dispositivos", "selected": false },
+        { "text": "Muestra los saltos intermedios que sigue un paquete hasta el destino final", "selected": true },
+        { "text": "Configura automáticamente rutas óptimas entre routers conectados", "selected": false },
+        { "text": "Elimina rutas incorrectas de la tabla de enrutamiento", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 10,
+      "question": "¿Qué comando permite visualizar la tabla de enrutamiento en un router?",
+      "answers": [
+        { "text": "show running config muestra únicamente la configuración activa", "selected": false },
+        { "text": "show ip route muestra las rutas configuradas y aprendidas en el sistema", "selected": true },
+        { "text": "ping muestra las rutas disponibles en la red completa", "selected": false },
+        { "text": "traceroute muestra la tabla de rutas del router directamente", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 11,
+      "question": "¿Qué define el enrutamiento estático basado en el origen?",
+      "answers": [
+        { "text": "El router utiliza protocolos dinámicos para elegir la mejor ruta", "selected": false },
+        { "text": "El router utiliza únicamente la dirección destino para decidir la ruta", "selected": false },
+        { "text": "El router decide la salida según la interfaz sin conocer el siguiente salto", "selected": true },
+        { "text": "El router elimina la tabla de rutas para simplificar decisiones", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 12,
+      "question": "¿Por qué el enrutamiento estático ofrece mayor seguridad?",
+      "answers": [
+        { "text": "Utiliza cifrado en todas las comunicaciones entre routers", "selected": false },
+        { "text": "No intercambia información de rutas reduciendo exposición a ataques externos", "selected": true },
+        { "text": "Permite compartir rutas con todos los routers de forma automática", "selected": false },
+        { "text": "Bloquea automáticamente cualquier tráfico desconocido en la red", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 13,
+      "question": "¿Qué diferencia principal existe entre routing estático y dinámico?",
+      "answers": [
+        { "text": "El dinámico elimina completamente las tablas de enrutamiento", "selected": false },
+        { "text": "El estático es automático y el dinámico requiere configuración manual", "selected": false },
+        { "text": "El estático es manual y el dinámico aprende rutas automáticamente", "selected": true },
+        { "text": "Ambos funcionan exactamente igual en todas las redes existentes", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 14,
+      "question": "¿Qué verifica principalmente el comando ping en una red IP?",
+      "answers": [
+        { "text": "Muestra el camino completo seguido por los paquetes en la red", "selected": false },
+        { "text": "Configura automáticamente rutas entre redes conectadas", "selected": false },
+        { "text": "Comprueba la conectividad básica entre dos dispositivos mediante ICMP", "selected": true },
+        { "text": "Analiza la tabla de rutas del router en detalle completo", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 15,
+      "question": "¿Qué debe contener la tabla de enrutamiento tras eliminar RIP?",
+      "answers": [
+        { "text": "Solo redes directamente conectadas al router sin rutas adicionales", "selected": true },
+        { "text": "Únicamente rutas por defecto configuradas manualmente", "selected": false },
+        { "text": "Todas las redes posibles aprendidas mediante protocolos dinámicos", "selected": false },
+        { "text": "Entradas de rutas duplicadas para mayor redundancia", "selected": false }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 16,
+      "question": "¿Qué red representa la ruta por defecto en enrutamiento IP?",
+      "answers": [
+        { "text": "0.0.0.0 con máscara 0.0.0.0 como ruta general de salida", "selected": true },
+        { "text": "127.0.0.0 con máscara 255.0.0.0 como red de loopback", "selected": false },
+        { "text": "192.168.0.0 con máscara 255.255.255.0 como red local", "selected": false },
+        { "text": "255.255.255.255 con máscara 0.0.0.0 como ruta específica", "selected": false }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 17,
+      "question": "¿Cuál es el tiempo aproximado de convergencia del protocolo RIP?",
+      "answers": [
+        { "text": "Puede tardar menos de un segundo en actualizar todas las rutas", "selected": false },
+        { "text": "Puede tardar exactamente cinco segundos en todos los casos", "selected": false },
+        { "text": "Puede tardar hasta treinta segundos en actualizar las rutas tras cambios", "selected": true },
+        { "text": "Puede tardar varios minutos sin límite definido en redes pequeñas", "selected": false }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 18,
+      "question": "¿Qué permite el enrutamiento basado en políticas PBR?",
+      "answers": [
+        { "text": "Eliminar completamente la tabla de enrutamiento del router", "selected": false },
+        { "text": "Asignar direcciones IP dinámicamente a los dispositivos", "selected": false },
+        { "text": "Bloquear todo el tráfico que no tenga ruta específica", "selected": false },
+        { "text": "Redirigir tráfico según origen independientemente del destino final", "selected": true }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 19,
+      "question": "¿Qué indica el parámetro final en el comando ip route con gateway?",
+      "answers": [
+        { "text": "La dirección MAC del dispositivo final al que se envía el paquete", "selected": false },
+        { "text": "La dirección IP del siguiente salto hacia la red destino configurada", "selected": true },
+        { "text": "El puerto físico del switch conectado al router principal", "selected": false },
+        { "text": "La máscara de subred de la red origen configurada", "selected": false }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 20,
+      "question": "¿Cuántos hosts utilizables permite una subred con máscara /27?",
+      "answers": [
+        { "text": "32 hosts utilizables en cada subred configurada", "selected": false },
+        { "text": "16 hosts utilizables en cada subred configurada", "selected": false },
+        { "text": "28 hosts utilizables en cada subred configurada", "selected": false },
+        { "text": "30 hosts utilizables en cada subred configurada", "selected": true }
+      ]
+    }
+  ],
+  "warnings": []
+}

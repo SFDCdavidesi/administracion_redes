@@ -1,0 +1,228 @@
+{
+  "sourcePdf": "C:\\Users\\david\\python\\redes\\web\\examenes\\Tema_Direccionamiento_IP.pdf",
+  "exportedAt": "2026-05-14T18:10:45.123456+00:00",
+  "totalQuestions": 20,
+  "items": [
+    {
+      "page": 1,
+      "questionNumber": 1,
+      "question": "¿Qué función principal cumple una dirección IP dentro de una red?",
+      "answers": [
+        { "text": "Indicar el fabricante del hardware de red", "selected": false },
+        { "text": "Definir el protocolo de transporte utilizado", "selected": false },
+        { "text": "Determinar el sistema operativo del dispositivo", "selected": false },
+        { "text": "Identificar de forma única a un dispositivo para permitir la comunicación", "selected": true }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 2,
+      "question": "¿Qué describe mejor el concepto de subnetting?",
+      "answers": [
+        { "text": "Asignar una dirección pública a cada dispositivo interno", "selected": false },
+        { "text": "Convertir direcciones IPv4 en IPv6", "selected": false },
+        { "text": "Reducir el tamaño de los paquetes de red", "selected": false },
+        { "text": "Dividir una red en múltiples subredes usando bits del campo host", "selected": true }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 3,
+      "question": "¿Cuál es el rango del primer byte para direcciones de clase A?",
+      "answers": [
+        { "text": "192 a 223", "selected": false },
+        { "text": "128 a 191", "selected": false },
+        { "text": "1 a 126", "selected": true },
+        { "text": "0 a 127", "selected": false }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 4,
+      "question": "¿Cuántos hosts utilizables tiene una red de clase C?",
+      "answers": [
+        { "text": "65,534 hosts", "selected": false },
+        { "text": "2,097,152 hosts", "selected": false },
+        { "text": "254 hosts", "selected": true },
+        { "text": "16,777,214 hosts", "selected": false }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 5,
+      "question": "¿Cuál es la diferencia principal entre IPv4 e IPv6 en términos de longitud de dirección?",
+      "answers": [
+        { "text": "IPv4 tiene 32 bits mientras IPv6 tiene 128 bits", "selected": true },
+        { "text": "IPv4 tiene 64 bits mientras IPv6 tiene 128 bits", "selected": false },
+        { "text": "IPv4 tiene 32 bits mientras IPv6 tiene 64 bits", "selected": false },
+        { "text": "IPv4 tiene 128 bits mientras IPv6 tiene 32 bits", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 6,
+      "question": "¿Cuál es el propósito principal de una máscara de subred?",
+      "answers": [
+        { "text": "Definir el gateway predeterminado", "selected": false },
+        { "text": "Asignar direcciones IP automáticamente", "selected": false },
+        { "text": "Determinar qué bits pertenecen a la red y cuáles al host", "selected": true },
+        { "text": "Determinar el protocolo de transporte de la red", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 7,
+      "question": "¿Cuántos hosts utilizables puede tener una red de clase A?",
+      "answers": [
+        { "text": "2,097,152 hosts", "selected": false },
+        { "text": "16,777,214 hosts", "selected": true },
+        { "text": "65,534 hosts", "selected": false },
+        { "text": "254 hosts", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 8,
+      "question": "¿Cuántos hosts utilizables tiene una red de clase B?",
+      "answers": [
+        { "text": "2,097,152 hosts", "selected": false },
+        { "text": "65,534 hosts", "selected": true },
+        { "text": "16,777,214 hosts", "selected": false },
+        { "text": "254 hosts", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 9,
+      "question": "¿Qué ocurre si dos dispositivos utilizan la misma dirección IP dentro de una misma red?",
+      "answers": [
+        { "text": "La red se segmenta automáticamente en dos subredes", "selected": false },
+        { "text": "El router asigna automáticamente otra IP al segundo dispositivo", "selected": false },
+        { "text": "Ambos dispositivos comparten el tráfico sin problemas", "selected": false },
+        { "text": "Aparecen conflictos de red y errores de comunicación", "selected": true }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 10,
+      "question": "¿Cómo se representan los bits de red y host en una máscara de subred?",
+      "answers": [
+        { "text": "Los bits de red son 0 y los bits de host son 1", "selected": false },
+        { "text": "Los bits de red son 1 y los bits de host son 0", "selected": true },
+        { "text": "Ambos utilizan únicamente valores 1", "selected": false },
+        { "text": "Ambos utilizan únicamente valores 0", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 11,
+      "question": "¿Qué caracteriza principalmente a una dirección IP pública?",
+      "answers": [
+        { "text": "Es exclusiva de redes locales domésticas", "selected": false },
+        { "text": "Solo se utiliza en redes privadas corporativas", "selected": false },
+        { "text": "Es asignada por el ISP y permite comunicación con redes externas", "selected": true },
+        { "text": "Es generada por el router para dispositivos internos", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 12,
+      "question": "¿Cuál es el rango del primer byte para direcciones de clase B?",
+      "answers": [
+        { "text": "128 a 191", "selected": true },
+        { "text": "224 a 239", "selected": false },
+        { "text": "1 a 126", "selected": false },
+        { "text": "192 a 223", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 13,
+      "question": "¿Cuál es una característica de una dirección IP pública dinámica?",
+      "answers": [
+        { "text": "Cambia periódicamente mediante asignación automática del ISP", "selected": true },
+        { "text": "Permanece fija durante toda la vida del servidor", "selected": false },
+        { "text": "Debe configurarse manualmente por el administrador", "selected": false },
+        { "text": "Solo puede usarse en redes privadas", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 14,
+      "question": "¿Qué operación se utiliza para determinar la red a partir de una IP y una máscara?",
+      "answers": [
+        { "text": "Multiplicación binaria entre IP y máscara", "selected": false },
+        { "text": "Producto lógico AND entre IP y máscara", "selected": true },
+        { "text": "Suma binaria entre IP y máscara", "selected": false },
+        { "text": "Operación OR entre IP y máscara", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 15,
+      "question": "¿Cuál es la longitud total de una dirección IPv4 y cómo se estructura internamente?",
+      "answers": [
+        { "text": "32 bits organizados en cuatro bytes de 8 bits cada uno", "selected": true },
+        { "text": "128 bits organizados en cuatro bloques de 32 bits", "selected": false },
+        { "text": "32 bits organizados en ocho bloques de 4 bits", "selected": false },
+        { "text": "64 bits organizados en cuatro bloques de 16 bits", "selected": false }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 16,
+      "question": "¿Para qué tipo de sistemas suele ser necesaria una dirección IP pública estática?",
+      "answers": [
+        { "text": "Equipos móviles conectados a WiFi público", "selected": false },
+        { "text": "Dispositivos IoT domésticos", "selected": false },
+        { "text": "Ordenadores personales en redes privadas", "selected": false },
+        { "text": "Servidores web, DNS o servicios accesibles permanentemente", "selected": true }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 17,
+      "question": "¿Cuál es el rango del primer byte para direcciones de clase C?",
+      "answers": [
+        { "text": "224 a 255", "selected": false },
+        { "text": "128 a 191", "selected": false },
+        { "text": "192 a 223", "selected": true },
+        { "text": "1 a 126", "selected": false }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 18,
+      "question": "¿Cuál es la fórmula para calcular el número de subredes posibles en subnetting?",
+      "answers": [
+        { "text": "N = 2^n donde n es el número de bits usados para subred", "selected": true },
+        { "text": "N = 2^(n+h) donde h es el número de hosts", "selected": false },
+        { "text": "N = n^2 donde n es el número de hosts", "selected": false },
+        { "text": "N = 2^h donde h es el número total de hosts", "selected": false }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 19,
+      "question": "¿Cuál es el rango completo de direcciones IPv4 posibles?",
+      "answers": [
+        { "text": "1.0.0.1 a 254.255.255.254", "selected": false },
+        { "text": "0.0.0.1 a 254.255.255.255", "selected": false },
+        { "text": "0.0.0.0 a 255.255.255.255", "selected": true },
+        { "text": "1.0.0.0 a 255.255.255.255", "selected": false }
+      ]
+    },
+    {
+      "page": 4,
+      "questionNumber": 20,
+      "question": "¿Cuál es la función principal de una dirección IP privada?",
+      "answers": [
+        { "text": "Asignar dominios DNS automáticamente", "selected": false },
+        { "text": "Identificar dispositivos dentro de una red interna", "selected": true },
+        { "text": "Permitir acceso directo desde Internet", "selected": false },
+        { "text": "Identificar servidores públicos globales", "selected": false }
+      ]
+    }
+  ],
+  "warnings": []
+}

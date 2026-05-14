@@ -1,0 +1,161 @@
+{
+  "sourcePdf": "C:\\Users\\david\\python\\redes\\web\\examenes\\UD_4_ACLs_Listas_de_Acceso.pdf",
+  "exportedAt": "2026-05-14T18:40:12.000000+00:00",
+  "totalQuestions": 20,
+  "items": [
+    {
+      "page": 1,
+      "questionNumber": 1,
+      "question": "¿Qué ocurre en una ACL aplicada en dirección de entrada en una interfaz?",
+      "answers": [
+        { "text": "Se utiliza exclusivamente para controlar tráfico de salida del sistema", "selected": false },
+        { "text": "Se evalúa antes del enrutamiento y descarta paquetes sin procesarlos", "selected": true },
+        { "text": "Se aplica únicamente a tráfico generado por el propio router", "selected": false },
+        { "text": "Se evalúa después del enrutamiento y consume más recursos internos", "selected": false }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 2,
+      "question": "¿Qué implica utilizar permit ip en una ACL extendida entre dos redes?",
+      "answers": [
+        { "text": "Permite tráfico ICMP exclusivamente para diagnóstico de red", "selected": false },
+        { "text": "Permite únicamente tráfico TCP en todos los puertos disponibles", "selected": false },
+        { "text": "Permite solo tráfico UDP y bloquea protocolos de control", "selected": false },
+        { "text": "Permite todos los protocolos de capa superior como TCP UDP e ICMP", "selected": true }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 3,
+      "question": "¿Qué indica un bit con valor 0 en una máscara wildcard dentro de una ACL?",
+      "answers": [
+        { "text": "El bit correspondiente de la IP debe coincidir exactamente con la dirección", "selected": true },
+        { "text": "El bit correspondiente de la IP puede tomar cualquier valor sin restricción", "selected": false },
+        { "text": "El bit correspondiente se ignora completamente durante la comparación", "selected": false },
+        { "text": "El bit correspondiente se invierte automáticamente antes de evaluar", "selected": false }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 4,
+      "question": "¿Qué significa un bit con valor 1 en una máscara wildcard dentro de ACL?",
+      "answers": [
+        { "text": "El bit correspondiente de la IP no es relevante en la comparación realizada", "selected": true },
+        { "text": "El bit correspondiente se convierte automáticamente en máscara de red", "selected": false },
+        { "text": "El bit correspondiente debe coincidir exactamente con la dirección indicada", "selected": false },
+        { "text": "El bit correspondiente debe ser siempre cero en la evaluación binaria", "selected": false }
+      ]
+    },
+    {
+      "page": 1,
+      "questionNumber": 5,
+      "question": "¿En qué capas del modelo OSI pueden operar las ACL en el filtrado de paquetes?",
+      "answers": [
+        { "text": "En capa de red y transporte analizando direcciones protocolos y puertos", "selected": true },
+        { "text": "En capa física gestionando señales eléctricas de transmisión", "selected": false },
+        { "text": "En capa de aplicación analizando únicamente contenido de datos", "selected": false },
+        { "text": "En capa de enlace controlando direcciones MAC exclusivamente", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 6,
+      "question": "¿Dónde deben colocarse preferentemente las ACL extendidas en una red?",
+      "answers": [
+        { "text": "Cerca del origen para filtrar tráfico no deseado lo antes posible", "selected": true },
+        { "text": "Solo en interfaces internas de la red corporativa", "selected": false },
+        { "text": "Cerca del destino para evitar pérdida de paquetes críticos", "selected": false },
+        { "text": "En cualquier punto ya que no afecta al rendimiento de la red", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 7,
+      "question": "¿Por qué una ACL puede bloquear solicitudes DHCP si no se configura correctamente?",
+      "answers": [
+        { "text": "Porque usa origen 0.0.0.0 y destino broadcast que pueden ser denegados", "selected": true },
+        { "text": "Porque DHCP requiere autenticación previa mediante ACL extendidas", "selected": false },
+        { "text": "Porque DHCP solo funciona en redes con direcciones públicas", "selected": false },
+        { "text": "Porque DHCP utiliza únicamente tráfico TCP en puertos reservados", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 8,
+      "question": "¿Qué representa la palabra clave host en una ACL Cisco?",
+      "answers": [
+        { "text": "Equivale a una máscara wildcard 0.0.0.0 indicando un único dispositivo", "selected": true },
+        { "text": "Equivale a una red completa con máscara 255.255.255.0", "selected": false },
+        { "text": "Equivale a un rango dinámico de direcciones asignadas", "selected": false },
+        { "text": "Equivale a cualquier dirección IP dentro de la red definida", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 9,
+      "question": "¿Qué define correctamente una ACL en dispositivos de red Cisco?",
+      "answers": [
+        { "text": "Mecanismo que convierte direcciones privadas en direcciones públicas externas", "selected": false },
+        { "text": "Conjunto ordenado de reglas que permiten o deniegan paquetes según condiciones", "selected": true },
+        { "text": "Protocolo de enrutamiento que calcula rutas óptimas entre dispositivos", "selected": false },
+        { "text": "Sistema dinámico que asigna direcciones IP automáticamente en redes locales", "selected": false }
+      ]
+    },
+    {
+      "page": 2,
+      "questionNumber": 10,
+      "question": "¿Qué ocurre si un paquete no coincide con ninguna entrada de una ACL?",
+      "answers": [
+        { "text": "Se reenvía al siguiente router sin aplicar ningún tipo de filtrado", "selected": false },
+        { "text": "Se almacena temporalmente hasta encontrar una regla compatible", "selected": false },
+        { "text": "Es descartado automáticamente por la regla implícita deny any final", "selected": true },
+        { "text": "Se permite automáticamente por defecto en todas las interfaces activas", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 11,
+      "question": "¿Cómo procesa un router las reglas de una ACL al recibir un paquete?",
+      "answers": [
+        { "text": "Evalúa todas las reglas y aplica la más restrictiva al paquete recibido", "selected": false },
+        { "text": "Evalúa primero las reglas finales y luego las iniciales de la lista", "selected": false },
+        { "text": "Evalúa secuencialmente y aplica la primera regla que coincide con el paquete", "selected": true },
+        { "text": "Selecciona aleatoriamente una regla según la carga de red existente", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 12,
+      "question": "¿Qué puertos utiliza el protocolo DHCP en sus comunicaciones básicas?",
+      "answers": [
+        { "text": "UDP puerto 67 para servidor y 68 para cliente en comunicación inicial", "selected": true },
+        { "text": "UDP puerto 21 para servidor y 22 para cliente en transferencia segura", "selected": false },
+        { "text": "TCP puerto 25 para servidor y 110 para cliente en correo electrónico", "selected": false },
+        { "text": "TCP puerto 80 para servidor y 443 para cliente en comunicación web", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 13,
+      "question": "¿Por qué es importante colocar reglas específicas antes que generales en ACL?",
+      "answers": [
+        { "text": "Porque las reglas específicas siempre se evalúan al final de la lista", "selected": false },
+        { "text": "Porque una regla general puede coincidir antes y evitar evaluar las específicas", "selected": true },
+        { "text": "Porque el router reordena automáticamente las reglas por prioridad", "selected": false },
+        { "text": "Porque las reglas generales tienen menor impacto en el rendimiento", "selected": false }
+      ]
+    },
+    {
+      "page": 3,
+      "questionNumber": 14,
+      "question": "¿Cuándo comienza a tener efecto una ACL configurada en un router Cisco?",
+      "answers": [
+        { "text": "Cuando se define en configuración global sin necesidad de aplicación", "selected": false },
+        { "text": "Cuando se crea al menos una regla de tipo permit en la lista", "selected": false },
+        { "text": "Cuando se aplica explícitamente a una interfaz en dirección entrada o salida", "selected": true },
+        { "text": "Cuando se reinicia el router tras cargar la configuración completa", "selected": false }
+      ]
+    },
+    {
+      "page
