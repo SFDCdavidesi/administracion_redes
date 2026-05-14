@@ -38,32 +38,49 @@ administracion_de_redes/
 
 La función está lista. Solo necesita estar en la carpeta `api/`.
 
-### 3. Configuración en `vercel.json` (opcional)
+### 3. Configuración en `vercel.json` (RECOMENDADO)
+
+Archivo necesario para que Vercel entienda la estructura del proyecto:
 
 ```json
 {
-  "builds": [
+  "buildCommand": "echo 'No build required'",
+  "outputDirectory": "web",
+  "public": true,
+  "functions": {
+    "api/**/*.js": {
+      "memory": 128,
+      "maxDuration": 30,
+      "runtime": "nodejs18.x"
+    }
+  },
+  "redirects": [
     {
-      "src": "web/**",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "api/**",
-      "use": "@vercel/node"
+      "source": "/datasets/:path*",
+      "destination": "/web/datasets/:path*"
     }
   ],
-  "routes": [
+  "headers": [
     {
-      "src": "^/api/(.*)",
-      "dest": "/api/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/web/$1"
+      "source": "/api/:path*",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
     }
   ]
 }
 ```
+
+**Explicación:**
+- `outputDirectory: "web"` - Sirve la carpeta `web/` como raíz pública
+- `functions` - Configura funciones serverless en `api/`
+- `redirects` - Maneja rutas a datasets
+- `headers` - Añade CORS automáticamente a `/api/*`
+
+**Ya incluido en el repositorio** ✅
 
 ---
 
