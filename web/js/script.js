@@ -591,8 +591,6 @@ function importProgressData(data) {
     stopTimer();
   }
 
-  el.scoreOk.value = String(state.pointsCorrect);
-  el.scoreFail.value = String(state.penaltyWrong);
   el.shuffleBtn.textContent = `🔀 Mezclar preguntas: ${state.shuffle ? "ON" : "OFF"}`;
   renderAll();
 }
@@ -1004,11 +1002,6 @@ async function loadFiles(fileList) {
 
 function showSimToast() {
   if (!el.simToast) return;
-  const total = state.banks.flatMap((b) => b.questions).length;
-  if (total === 0) {
-    el.statusLine.textContent = "Carga al menos un dataset antes de iniciar el simulacro.";
-    return;
-  }
   el.simToast.hidden = false;
 }
 
@@ -1016,11 +1009,40 @@ function closeSimToast() {
   if (el.simToast) el.simToast.hidden = true;
 }
 
-function startQuickSim(count) {
+async function autoLoadAllDatasets() {
+  let names = el.serverDatasetSelect
+    ? Array.from(el.serverDatasetSelect.options).map((o) => o.value).filter((v) => v)
+    : [];
+
+  if (names.length === 0) {
+    await refreshServerDatasets();
+    names = el.serverDatasetSelect
+      ? Array.from(el.serverDatasetSelect.options).map((o) => o.value).filter((v) => v)
+      : [];
+  }
+
+  for (const name of names) {
+    try {
+      const resp = await fetch(`datasets/${name}`, { cache: "no-store" });
+      if (!resp.ok) continue;
+      const payload = await resp.json();
+      const questions = normalizeJson(payload, name);
+      if (questions.length) addBank(name, questions);
+    } catch (_err) {
+      // omitir archivos con error
+    }
+  }
+}
+
+async function startQuickSim(count) {
   closeSimToast();
+
+  el.statusLine.textContent = "Cargando datasets...";
+  await autoLoadAllDatasets();
+
   const allQuestions = state.banks.flatMap((b) => b.questions);
   if (allQuestions.length === 0) {
-    el.statusLine.textContent = "Carga al menos un dataset antes de iniciar el simulacro.";
+    el.statusLine.textContent = "No se encontraron datasets. Carga uno manualmente con el selector.";
     return;
   }
 
@@ -1035,8 +1057,8 @@ function startQuickSim(count) {
   state.startedAt = Date.now();
   state.examLocked = false;
   state.examMode = true;
-  state.pointsCorrect = Number(el.scoreOk.value) || 1;
-  state.penaltyWrong = Number(el.scoreFail.value) || 0.33;
+  state.pointsCorrect = 1;
+  state.penaltyWrong = 0.33;
   state.durationSec = minutes * 60;
   state.examEndsAt = Date.now() + state.durationSec * 1000;
   state.lastWrongItems = [];
@@ -1156,40 +1178,9 @@ function wireEvents() {
     el.loadServerDatasetBtn.addEventListener("click", loadSelectedServerDataset);
   }
 
-  el.startSimBtn.addEventListener("click", startMockExam);
-  el.presetOfficialBtn.addEventListener("click", () => {
-    el.scoreOk.value = "1";
-    el.scoreFail.value = "0.33";
-    state.pointsCorrect = 1;
-    state.penaltyWrong = 0.33;
-    el.statusLine.textContent = "Preset oficial aplicado (+1 acierto, -0.33 fallo).";
-    renderAll();
-  });
-  el.saveProgressBtn.addEventListener("click", exportProgress);
   if (el.downloadPdfBtn) {
     el.downloadPdfBtn.addEventListener("click", exportQuestionsToPdf);
   }
-  if (el.saveBrowserProgressBtn) {
-    el.saveBrowserProgressBtn.addEventListener("click", saveBrowserProgress);
-  }
-  if (el.loadBrowserProgressBtn) {
-    el.loadBrowserProgressBtn.addEventListener("click", loadBrowserProgress);
-  }
-  if (el.clearBrowserProgressBtn) {
-    el.clearBrowserProgressBtn.addEventListener("click", clearBrowserProgress);
-  }
-
-  el.loadProgressInput.addEventListener("change", async (event) => {
-    const file = event.target.files?.[0];
-    if (!file) return;
-    try {
-      await importProgress(file);
-    } catch (err) {
-      el.statusLine.textContent = `No se pudo cargar progreso: ${err.message}`;
-    } finally {
-      event.target.value = "";
-    }
-  });
 
   if (typeof mobileQuery.addEventListener === "function") {
     mobileQuery.addEventListener("change", () => {

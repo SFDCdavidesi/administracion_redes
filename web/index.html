@@ -22,18 +22,13 @@
           <button id="loadServerDatasetBtn" class="btn small" type="button">📥 Cargar JSON</button>
           <button id="refreshServerDatasetsBtn" class="btn small" type="button">🔄 Actualizar</button>
         </div>
-<button id="quickSimBtn" class="btn primary" type="button">🎯 Simulacro</button>
-      <button id="mobileControlsToggle" class="btn small mobile-controls-toggle" type="button" aria-expanded="false">🧰 Más opciones</button>
+        <span id="timerChip" class="timer-chip">Sin simulacro</span>
+        <button id="quickSimBtn" class="btn primary" type="button">🎯 Simulacro</button>
+        <button id="mobileControlsToggle" class="btn small mobile-controls-toggle" type="button" aria-expanded="false">🧰 Más opciones</button>
       </div>
 
       <div class="toolbar advanced-controls">
-        <label class="btn small" for="loadProgressInput">📂 Cargar progreso</label>
-        <input id="loadProgressInput" type="file" accept="application/json">
-        <button id="saveProgressBtn" class="btn small" type="button">💾 Exportar progreso JSON</button>
         <button id="downloadPdfBtn" class="btn primary" type="button">📄 Generar PDF</button>
-        <button id="saveBrowserProgressBtn" class="btn small" type="button">🧠 Guardar navegador</button>
-        <button id="loadBrowserProgressBtn" class="btn small" type="button">♻️ Cargar navegador</button>
-        <button id="clearBrowserProgressBtn" class="btn small" type="button">🗑️ Borrar local</button>
         <button id="resetBtn" class="btn small" type="button">🔁 Reiniciar</button>
         <button id="shuffleBtn" class="btn small" type="button">🔀 Mezclar: OFF</button>
       </div>
@@ -42,24 +37,6 @@
         <label for="jsonFilesInput">JSON desde archivo externo</label>
         <input id="jsonFilesInput" type="file" accept="application/json,.json" multiple>
         <button id="loadExternalJsonBtn" class="btn small" type="button">📁 Seleccionar JSON externo</button>
-      </div>
-
-      <div class="sim-controls advanced-controls">
-        <label>
-          Minutos simulacro
-          <input id="simMinutes" type="number" min="1" value="30">
-        </label>
-        <label>
-          Puntos acierto
-          <input id="scoreOk" type="number" min="0" step="0.1" value="1">
-        </label>
-        <label>
-          Penalizacion fallo
-          <input id="scoreFail" type="number" min="0" step="0.01" value="0.33">
-        </label>
-        <button id="presetOfficialBtn" class="btn small" type="button">🎯 Preset oficial +1/-0.33</button>
-        <button id="startSimBtn" class="btn primary" type="button">⏱️ Iniciar simulacro</button>
-        <span id="timerChip" class="timer-chip">Sin simulacro</span>
       </div>
 
       <div class="dataset-row advanced-controls">
