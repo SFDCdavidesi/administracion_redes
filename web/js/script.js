@@ -1,6 +1,24 @@
 const DATASET_INDEX_PATH = "datasets/index.json";
 const DATASET_API_PATH = "/api/datasets";
 const BROWSER_PROGRESS_KEY = "campus-test-progress-v1";
+const THEME_KEY = "adm-redes-theme";
+
+function applyTheme(mode) {
+  const isLight = mode === "light";
+  document.documentElement.classList.toggle("light", isLight);
+  const btn = document.getElementById("themeToggleBtn");
+  if (btn) {
+    btn.textContent = isLight ? "🌙" : "☀️";
+    btn.title = isLight ? "Cambiar a modo oscuro" : "Cambiar a modo claro";
+  }
+}
+
+function toggleTheme() {
+  const current = document.documentElement.classList.contains("light") ? "light" : "dark";
+  const next = current === "light" ? "dark" : "light";
+  localStorage.setItem(THEME_KEY, next);
+  applyTheme(next);
+}
 
 const state = {
   banks: [],
@@ -74,7 +92,8 @@ const el = {
   simOpt60Btn: document.getElementById("simOpt60Btn"),
   simToastCancelBtn: document.getElementById("simToastCancelBtn"),
   aiPromptSection: document.getElementById("aiPromptSection"),
-  copyAiPromptBtn: document.getElementById("copyAiPromptBtn")
+  copyAiPromptBtn: document.getElementById("copyAiPromptBtn"),
+  themeToggleBtn: document.getElementById("themeToggleBtn")
 };
 
 function updateMobileQuizLayout() {
@@ -619,7 +638,7 @@ function renderStats() {
   el.summaryPanel.hidden = !finished;
   if (finished) {
     const sec = Math.max(1, Math.round((Date.now() - state.startedAt) / 1000));
-    el.summaryText.textContent = `Completado en ${sec}s. Aciertos ${stats.correct}/${stats.total} (${stats.percent}%). Nota oficial ${score.grade10.toFixed(2)}/10 (formula: +${state.pointsCorrect} acierto, -${state.penaltyWrong} fallo).`;
+    el.summaryText.textContent = `Completado en ${sec}s. Aciertos ${stats.correct}/${stats.total} (${stats.percent}%). Nota oficial ${score.grade10.toFixed(2)}/10 (fórmula: +${state.pointsCorrect} acierto, -${state.penaltyWrong} fallo).`;
     if (!state.examLocked) {
       el.statusLine.textContent = "Test finalizado.";
     }
@@ -1222,9 +1241,13 @@ function wireEvents() {
   if (el.copyAiPromptBtn) {
     el.copyAiPromptBtn.addEventListener("click", copyAiPrompt);
   }
+  if (el.themeToggleBtn) {
+    el.themeToggleBtn.addEventListener("click", toggleTheme);
+  }
 }
 
 async function init() {
+  applyTheme(localStorage.getItem(THEME_KEY) || "dark");
   wireEvents();
   renderAll();
   await refreshServerDatasets();
