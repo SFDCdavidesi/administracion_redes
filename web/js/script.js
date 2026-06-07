@@ -17,7 +17,8 @@ const state = {
   pointsCorrect: 1,
   penaltyWrong: 0.33,
   timerId: null,
-  mobileControlsExpanded: false
+  mobileControlsExpanded: false,
+  lastWrongItems: []
 };
 
 const mobileQuery = window.matchMedia("(max-width: 900px), (hover: none) and (pointer: coarse)");
@@ -66,7 +67,14 @@ const el = {
   navigator: document.getElementById("navigator"),
   navigatorToggle: document.getElementById("navigatorToggle"),
   closeNavigator: document.getElementById("closeNavigator"),
-  navigatorGrid: document.getElementById("navigatorGrid")
+  navigatorGrid: document.getElementById("navigatorGrid"),
+  quickSimBtn: document.getElementById("quickSimBtn"),
+  simToast: document.getElementById("simToast"),
+  simOpt30Btn: document.getElementById("simOpt30Btn"),
+  simOpt60Btn: document.getElementById("simOpt60Btn"),
+  simToastCancelBtn: document.getElementById("simToastCancelBtn"),
+  aiPromptSection: document.getElementById("aiPromptSection"),
+  copyAiPromptBtn: document.getElementById("copyAiPromptBtn")
 };
 
 function updateMobileQuizLayout() {
@@ -617,6 +625,23 @@ function renderStats() {
     if (!state.examLocked) {
       el.statusLine.textContent = "Test finalizado.";
     }
+
+    const wrongItems = [];
+    state.questions.forEach((q, idx) => {
+      const selected = state.answers[idx];
+      const correct = getCorrectIndex(q);
+      if (selected !== null && selected !== undefined && correct >= 0 && selected !== correct) {
+        wrongItems.push({
+          question: q.question,
+          correctText: q.answers[correct].text,
+          wrongText: q.answers[selected] ? q.answers[selected].text : "Sin respuesta"
+        });
+      }
+    });
+    state.lastWrongItems = wrongItems;
+    if (el.aiPromptSection) {
+      el.aiPromptSection.hidden = wrongItems.length === 0;
+    }
   }
 
   updateTimerChip();
@@ -977,6 +1002,86 @@ async function loadFiles(fileList) {
   recomputeQuestions();
 }
 
+function showSimToast() {
+  if (!el.simToast) return;
+  const total = state.banks.flatMap((b) => b.questions).length;
+  if (total === 0) {
+    el.statusLine.textContent = "Carga al menos un dataset antes de iniciar el simulacro.";
+    return;
+  }
+  el.simToast.hidden = false;
+}
+
+function closeSimToast() {
+  if (el.simToast) el.simToast.hidden = true;
+}
+
+function startQuickSim(count) {
+  closeSimToast();
+  const allQuestions = state.banks.flatMap((b) => b.questions);
+  if (allQuestions.length === 0) {
+    el.statusLine.textContent = "Carga al menos un dataset antes de iniciar el simulacro.";
+    return;
+  }
+
+  const shuffled = shuffleArray(allQuestions);
+  const used = shuffled.slice(0, count);
+  const minutes = count === 30 ? 25 : 50;
+
+  stopTimer();
+  state.questions = used;
+  state.answers = used.map(() => null);
+  state.currentIndex = 0;
+  state.startedAt = Date.now();
+  state.examLocked = false;
+  state.examMode = true;
+  state.pointsCorrect = Number(el.scoreOk.value) || 1;
+  state.penaltyWrong = Number(el.scoreFail.value) || 0.33;
+  state.durationSec = minutes * 60;
+  state.examEndsAt = Date.now() + state.durationSec * 1000;
+  state.lastWrongItems = [];
+
+  const notice = used.length < count
+    ? ` (solo habia ${used.length} preguntas disponibles)`
+    : "";
+  el.statusLine.textContent = `Simulacro iniciado: ${used.length} preguntas, ${minutes} min${notice}.`;
+  startTimer();
+  renderAll();
+}
+
+function buildAiPrompt(wrongItems) {
+  const lines = [
+    "Soy estudiante de la asignatura de Administracion de Redes.",
+    "He realizado un simulacro de examen y he fallado las siguientes preguntas.",
+    "Por favor, explicame uno por uno cada concepto que necesito reforzar, de forma clara y didactica:\n"
+  ];
+  wrongItems.forEach((item, idx) => {
+    lines.push(`${idx + 1}. Pregunta: "${item.question}"`);
+    lines.push(`   Respuesta correcta: "${item.correctText}"`);
+    lines.push(`   Mi respuesta erronea: "${item.wrongText}"\n`);
+  });
+  return lines.join("\n");
+}
+
+async function copyAiPrompt() {
+  if (!state.lastWrongItems.length) return;
+  const prompt = buildAiPrompt(state.lastWrongItems);
+  try {
+    await navigator.clipboard.writeText(prompt);
+    el.statusLine.textContent = "Prompt copiado al portapapeles. Pegalo en ChatGPT o tu IA favorita.";
+  } catch (_err) {
+    const ta = document.createElement("textarea");
+    ta.value = prompt;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand("copy");
+    document.body.removeChild(ta);
+    el.statusLine.textContent = "Prompt copiado al portapapeles.";
+  }
+}
+
 function wireEvents() {
   if (el.filesInput) {
     el.filesInput.addEventListener("change", async (event) => {
@@ -1104,6 +1209,27 @@ function wireEvents() {
       updateMobileControlsState();
       updateNavigatorUi();
     });
+  }
+
+  if (el.quickSimBtn) {
+    el.quickSimBtn.addEventListener("click", showSimToast);
+  }
+  if (el.simOpt30Btn) {
+    el.simOpt30Btn.addEventListener("click", () => startQuickSim(30));
+  }
+  if (el.simOpt60Btn) {
+    el.simOpt60Btn.addEventListener("click", () => startQuickSim(60));
+  }
+  if (el.simToastCancelBtn) {
+    el.simToastCancelBtn.addEventListener("click", closeSimToast);
+  }
+  if (el.simToast) {
+    el.simToast.addEventListener("click", (e) => {
+      if (e.target === el.simToast) closeSimToast();
+    });
+  }
+  if (el.copyAiPromptBtn) {
+    el.copyAiPromptBtn.addEventListener("click", copyAiPrompt);
   }
 }
 

@@ -630,3 +630,106 @@ input[type="file"] {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
+
+/* ── Simulacro toast ─────────────────────────────────────── */
+.sim-toast-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(31, 27, 23, 0.5);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: rise 220ms ease;
+}
+
+.sim-toast-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px 20px;
+  max-width: 440px;
+  width: calc(100vw - 32px);
+  display: grid;
+  gap: 14px;
+  text-align: center;
+}
+
+.sim-toast-card h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.sim-toast-card > p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.sim-toast-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.sim-opt-btn {
+  display: grid;
+  gap: 4px;
+  padding: 16px 10px;
+  text-align: center;
+  border-radius: 12px;
+  border: 2px solid var(--accent) !important;
+  background: #fff8f0 !important;
+  cursor: pointer;
+}
+
+.sim-opt-btn:hover {
+  background: #ffeeda !important;
+  transform: translateY(-2px);
+}
+
+.sim-opt-btn strong {
+  font-size: 2.2rem;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.sim-opt-btn span {
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+.sim-opt-btn small {
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
+
+/* ── AI prompt section ───────────────────────────────────── */
+.ai-prompt-section {
+  margin-top: 14px;
+  border: 1px solid #b8ddd9;
+  border-radius: 10px;
+  background: #f0faf9;
+  padding: 14px;
+  display: grid;
+  gap: 8px;
+}
+
+.ai-prompt-section h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #0b6b61;
+}
+
+.ai-prompt-section > p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+.ai-prompt-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}

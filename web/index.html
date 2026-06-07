@@ -19,28 +19,29 @@
         <div class="server-datasets essentials">
           <label for="serverDatasetSelect">JSON disponibles en carpeta datasets</label>
           <select id="serverDatasetSelect"></select>
-          <button id="loadServerDatasetBtn" class="btn" type="button">📥 Cargar JSON</button>
-          <button id="refreshServerDatasetsBtn" class="btn" type="button">🔄 Actualizar</button>
+          <button id="loadServerDatasetBtn" class="btn small" type="button">📥 Cargar JSON</button>
+          <button id="refreshServerDatasetsBtn" class="btn small" type="button">🔄 Actualizar</button>
         </div>
-        <button id="mobileControlsToggle" class="btn small mobile-controls-toggle" type="button" aria-expanded="false">🧰 Mas opciones</button>
+<button id="quickSimBtn" class="btn primary" type="button">🎯 Simulacro</button>
+      <button id="mobileControlsToggle" class="btn small mobile-controls-toggle" type="button" aria-expanded="false">🧰 Más opciones</button>
       </div>
 
       <div class="toolbar advanced-controls">
-        <label class="btn" for="loadProgressInput">📂 Cargar progreso</label>
+        <label class="btn small" for="loadProgressInput">📂 Cargar progreso</label>
         <input id="loadProgressInput" type="file" accept="application/json">
-        <button id="saveProgressBtn" class="btn" type="button">💾 Exportar progreso JSON</button>
-        <button id="downloadPdfBtn" class="btn" type="button">📄 Descargar PDF de preguntas</button>
-        <button id="saveBrowserProgressBtn" class="btn" type="button">🧠 Guardar en navegador</button>
-        <button id="loadBrowserProgressBtn" class="btn" type="button">♻️ Cargar del navegador</button>
-        <button id="clearBrowserProgressBtn" class="btn" type="button">🗑️ Borrar guardado local</button>
-        <button id="resetBtn" class="btn" type="button">🔁 Reiniciar progreso</button>
-        <button id="shuffleBtn" class="btn" type="button">🔀 Mezclar preguntas: OFF</button>
+        <button id="saveProgressBtn" class="btn small" type="button">💾 Exportar progreso JSON</button>
+        <button id="downloadPdfBtn" class="btn primary" type="button">📄 Generar PDF</button>
+        <button id="saveBrowserProgressBtn" class="btn small" type="button">🧠 Guardar navegador</button>
+        <button id="loadBrowserProgressBtn" class="btn small" type="button">♻️ Cargar navegador</button>
+        <button id="clearBrowserProgressBtn" class="btn small" type="button">🗑️ Borrar local</button>
+        <button id="resetBtn" class="btn small" type="button">🔁 Reiniciar</button>
+        <button id="shuffleBtn" class="btn small" type="button">🔀 Mezclar: OFF</button>
       </div>
 
       <div class="server-datasets advanced-controls">
         <label for="jsonFilesInput">JSON desde archivo externo</label>
         <input id="jsonFilesInput" type="file" accept="application/json,.json" multiple>
-        <button id="loadExternalJsonBtn" class="btn" type="button">📁 Seleccionar JSON externo</button>
+        <button id="loadExternalJsonBtn" class="btn small" type="button">📁 Seleccionar JSON externo</button>
       </div>
 
       <div class="sim-controls advanced-controls">
@@ -56,8 +57,8 @@
           Penalizacion fallo
           <input id="scoreFail" type="number" min="0" step="0.01" value="0.33">
         </label>
-        <button id="presetOfficialBtn" class="btn" type="button">🎯 Preset oficial +1/-0.33</button>
-        <button id="startSimBtn" class="btn" type="button">⏱️ Iniciar simulacro</button>
+        <button id="presetOfficialBtn" class="btn small" type="button">🎯 Preset oficial +1/-0.33</button>
+        <button id="startSimBtn" class="btn primary" type="button">⏱️ Iniciar simulacro</button>
         <span id="timerChip" class="timer-chip">Sin simulacro</span>
       </div>
 
@@ -114,14 +115,21 @@
       <div id="feedbackBox" class="feedback" hidden></div>
 
       <footer class="quiz-nav">
-        <button id="prevBtn" class="btn" type="button">⬅️ Anterior</button>
-        <button id="nextBtn" class="btn" type="button">Siguiente ➡️</button>
+        <button id="prevBtn" class="btn small" type="button">⬅️ Anterior</button>
+        <button id="nextBtn" class="btn small" type="button">Siguiente ➡️</button>
       </footer>
     </section>
 
     <section id="summaryPanel" class="panel summary" hidden>
       <h3>Resumen final</h3>
       <p id="summaryText"></p>
+      <div id="aiPromptSection" class="ai-prompt-section" hidden>
+        <h4>❌ Conceptos fallados — Prompt para IA</h4>
+        <p>Copia este prompt y pégalo en ChatGPT, Copilot o cualquier IA para que te explique cada concepto que has fallado:</p>
+        <div class="ai-prompt-btns">
+          <button id="copyAiPromptBtn" class="btn primary" type="button">📋 Copiar prompt para IA</button>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -133,6 +141,25 @@
     <div id="navigatorGrid" class="navigator-grid"></div>
   </aside>
 
+  <div id="simToast" class="sim-toast-backdrop" hidden>
+    <div class="sim-toast-card" role="dialog" aria-modal="true" aria-labelledby="simToastTitle">
+      <h3 id="simToastTitle">🎯 Iniciar Simulacro</h3>
+      <p>Elige el número de preguntas. El temporizador se ajusta automáticamente.</p>
+      <div class="sim-toast-options">
+        <button id="simOpt30Btn" class="btn sim-opt-btn" type="button">
+          <strong>30</strong>
+          <span>preguntas</span>
+          <small>⏱️ 25 minutos</small>
+        </button>
+        <button id="simOpt60Btn" class="btn sim-opt-btn" type="button">
+          <strong>60</strong>
+          <span>preguntas</span>
+          <small>⏱️ 50 minutos</small>
+        </button>
+      </div>
+      <button id="simToastCancelBtn" class="btn small" type="button">Cancelar</button>
+    </div>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js"></script>
   <script src="js/script.js"></script>
