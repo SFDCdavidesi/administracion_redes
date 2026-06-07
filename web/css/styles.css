@@ -643,6 +643,10 @@ input[type="file"] {
   animation: rise 220ms ease;
 }
 
+.sim-toast-backdrop[hidden] {
+  display: none;
+}
+
 .sim-toast-card {
   background: var(--paper);
   border: 1px solid var(--line);
